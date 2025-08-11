@@ -17,6 +17,28 @@ h1 {
   margin-top: 50px; /* <-- Add this line */
 }
 
+
+/* Flicker style */
+.flicker {
+  opacity: 0.1;
+  transition: opacity 0.1s ease-in-out;
+  text-shadow: 0 0 2px #00ff00, 0 0 5px #00ff00;
+}
+
+/* apply flicker to all <b> at once when body has .dim */
+body.dim b {
+  opacity: 0.25;
+  transition: opacity 0.12s ease-in-out;
+}
+
+/* respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  body.dim b { transition: none; opacity: 1 !important; }
+}
+
+
+
+
 .video-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -86,6 +108,7 @@ h1::before {
 }
 
   </style>
+
 </head>
 <body>
 
@@ -116,20 +139,24 @@ h1::before {
   <center><a href="https://cloudsmith.com/blog/kubernetes-1-33-what-you-need-to-know" target="_blank">Kubernetes 1.33 – What you need to know</a></center>      
   <center><a href="https://cloudsmith.com/blog/kubernetes-1-34-what-you-need-to-know" target="_blank">Kubernetes 1.34 – What you need to know</a></center>
 
-  <center><h1>Social Posts</h1></center>
+  <center><h1>Miscellaneous</h1></center>
   <center><a href="https://www.linkedin.com/posts/zoerab_fosdem-stratoshark-wireshark-activity-7291505953902915584-q0H9/" target="_blank">Main Stage at FOSDEM</a></center>
   <center><a href="https://www.reddit.com/r/kubernetes/comments/1jv1w5h/kubernetes_133_release/" target="_blank">Kubernetes 1.33 - Reddit</a></center>
-  <center><a href="https://www.reddit.com/r/kubernetes/comments/1mc6si3/kubernetes_134_release/" target="_blank">Kubernetes 1.34 - Reddit</a></center>  
-  <center><a href="https://www.linkedin.com/posts/nigel-douglas-devrel_kubernetes-132-whats-new-activity-7270548006326747137-Aaa9" target="_blank">Kubernetes 1.32 - LinkedIn</a>
-  </center>        
-  <center><a href="https://www.linkedin.com/posts/shurupov_kubernetes-133-what-you-need-to-know-activity-7315975648957677570--8ws/" target="_blank">Kubernetes 1.33 - LinkedIn</a>
-  </center>     
-  <center><a href="https://www.linkedin.com/posts/shurupov_kubernetes-134-what-you-need-to-know-activity-7356200114287210496-loyn" target="_blank">Kubernetes 1.34 - LinkedIn</a>
-  </center>
-  <center><a href="https://www.linkedin.com/posts/saim-safder_platformcon-cloudnatievfm-cloudtherapist-activity-7346896118506475522-Lolv" target="_blank">Recap from PlatformCon EU '25</a></center>  
-  <center><a href="https://www.linkedin.com/posts/cloudsmith_letter-why-software-developers-hate-the-activity-7346558366959214592-Bssj/" target="_blank">Financial Times post on Vibe Coding</a></center>
-  <center><a href="https://www.linkedin.com/posts/vanzantvliet_vibecoding-securebydesign-softwaresupplychain-activity-7342770385278427136-7vIk" target="_blank">Dutch Railways CISO response to FT letter</a></center>
-  <center><a href="https://www.linkedin.com/posts/grweinstein_cve-2025-3248-serious-vulnerability-found-activity-7340763459346722818-Hibm/" target="_blank">Glenn's post on the CVE-2025-3248 vulnerability</a></center>        
+  <center><a href="https://www.reddit.com/r/kubernetes/comments/1mc6si3/kubernetes_134_release/" target="_blank">Kubernetes 1.34 - Reddit</a></center>    
+  <center><a href="https://www.linkedin.com/posts/nigel-douglas-devrel_kubernetes-132-whats-new-activity-7270548006326747137-Aaa9" target="_blank">Kubernetes 1.32 - LinkedIn</a>  </center>        
+  <center><a href="https://www.linkedin.com/posts/shurupov_kubernetes-133-what-you-need-to-know-activity-7315975648957677570--8ws/" target="_blank">Kubernetes 1.33 - LinkedIn</a>  </center>     
+  <center><a href="https://www.linkedin.com/posts/shurupov_kubernetes-134-what-you-need-to-know-activity-7356200114287210496-loyn" target="_blank">Kubernetes 1.34 - LinkedIn</a>  </center>
+  <center><a href="https://www.linkedin.com/posts/saim-safder_platformcon-cloudnatievfm-cloudtherapist-activity-7346896118506475522-Lolv" target="_blank">Recap from Platform con EU'25</a>  </center>   
+  <center><a href="https://www.linkedin.com/posts/hackervalleystudio_cybersecurity-ai-kubernetes-activity-7292255535289024512-YNh0" target="_blank">Hacker Valley Media on LinkedIn</a>  </center>     
+  <center><a href="https://www.linkedin.com/posts/cloudsmith_letter-why-software-developers-hate-the-activity-7346558366959214592-Bssj/" target="_blank">Financial Times post on Vibe Coding</a>  </center>
+  <center><a href="https://github.com/cloudsmith-io/rego-recipes" target="_blank">Cloudsmith OPA Rego Cookbook repository</a>  </center>   
+  <center><a href="https://showcase.itcarlow.ie/cybermsc2024.html" target="_blank">Masters in Cybersecurity Project Showcase</a>  </center>     
+  <center><a href="https://www.linkedin.com/posts/vanzantvliet_vibecoding-securebydesign-softwaresupplychain-activity-7342770385278427136-7vIk" target="_blank">Dutch Railways CISO response to the FT letter</a>  </center>  
+  <center><a href="https://www.linkedin.com/posts/grweinstein_cve-2025-3248-serious-vulnerability-found-activity-7340763459346722818-Hibm/" target="_blank">Glenn's post on the CVE-2025-3248 vulnerability</a>  </center>
+  <center><a href="https://github.com/nigeldouglas-itcarlow/pentesting-xss?tab=readme-ov-file" target="_blank">Address Resolution Protocol (ARP) Spoofing Attacks</a>  </center>    
+  <center><a href="https://github.com/nigeldouglas-itcarlow/pentesting-xss?tab=readme-ov-file" target="_blank">Penetration Testing Samples - Cross Site Scripting (XSS)</a>  </center>
+  <center><a href="https://github.com/nigeldouglas-itcarlow/pentesting-mainproject" target="_blank">Penetration Testing - Main Project for Masters Degree at SETU</a>  </center>   
+  <center><a href="https://github.com/nigeldouglas-itcarlow/decentralised-vault-manager" target="_blank">Decentralized Smart Contract manager for distributing native tokens</a>  </center>                    
 
   <center><h1>Profiles</h1></center>
   <center><a href="https://www.sans.org/profiles/nigel-douglas" target="_blank">SANS</a></center>
@@ -148,14 +175,16 @@ h1::before {
   <center><a href="https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-europe-london-2025/speaker/WDMANM/" target="_blank">Cloud Native Rejekts</a></center>
   <center><a href="https://osseu2025.sched.com/speaker/mossydouglas" target="_blank">Open Source Summit EU</a></center>     
 
-  <center><h1>Blog Posts</h1></center> 
-  <center><a href="https://www.sysdig.com/blog/hidden-economy-of-open-source-software" target="_blank">The Hidden Economy of Open Source Software</a></center>  
-  <center><a href="https://www.sysdig.com/blog/optimizing-wireshark-in-kubernetes" target="_blank">Running Wireshark captures within Kubernetes</a></center>   
+  <center><h1>Blog Posts</h1></center>   
+  <center><a href="https://www.sysdig.com/blog/optimizing-wireshark-in-kubernetes" target="_blank">Run Wireshark captures within Kubernetes</a></center>    
+  <center><a href="https://www.sysdig.com/blog/hidden-economy-of-open-source-software" target="_blank">The Hidden Economy of Open Source Software</a></center>
+  <center><a href="https://www.cncf.io/blog/2025/05/01/enforcing-artifact-security-with-trivy-and-opa/" target="_blank">Enforce Artifact Security with Trivy and OPA</a></center>   
+  <b><center><a href="https://cloudsecurityalliance.org/blog/2024/01/02/scarleteel-2-0-and-the-mitre-att-ck-framework" target="_blank">Scarleteel 2.0 and the MITRE ATT&CK Framework</a></center></b>         
   <center><a href="https://www.sysdig.com/blog/the-race-for-artificial-intelligence-governance" target="_blank">The Race for Artificial Intelligence Governance</a></center>  
   <center><a href="https://falco.org/blog/wireshark-to-falco/" target="_blank">Linux Introspection from BPF to Wireshark to Falco</a></center>         
-  <center><a href="https://grcoutlook.com/falco-talons-proposed-donation-to-cncfs-falco/" target="_blank">Falco Talon donation to the falcosecurity repository</a></center>
+  <center><a href="https://grcoutlook.com/falco-talons-proposed-donation-to-cncfs-falco/" target="_blank">Falco Talon donation to the falcosecurity repository</a></center> 
   <center><a href="https://cloudsmith.com/blog/open-container-initiative-oci-support-in-cloudsmith" target="_blank">Open Container Initiative (OCI) Support in Cloudsmith</a></center>          
-  <center><a href="https://www.sysdig.com/blog/detect-cve-2025-22224-with-falco" target="_blank">CVE-2025-22224: A critical TOCTOU code execution attack</a></center>  
+  <b><center><a href="https://www.sysdig.com/blog/detect-cve-2025-22224-with-falco" target="_blank">CVE-2025-22224: A critical TOCTOU code execution attack</a></center> </b> 
   <center><a href="https://www.sysdig.com/blog/detect-cve-2020-8554-using-falco" target="_blank">CVE-2020-8554: Unpatched MITM vulnerability in Kubernetes</a></center>
   <center><a href="https://allthingsopen.org/articles/docker-content-trust-sigstore-vs-notation" target="_blank">Docker is retiring Content Trust and here's what that means</a></center>      
   <center><a href="https://openssf.org/blog/2024/06/21/an-open-source-approach-to-threat-mitigation-in-aws/" target="_blank">OpenSSF: The Open Source Approach to Threat Mitigation in AWS</a></center>
@@ -168,15 +197,18 @@ h1::before {
   <center><a href="https://www.cncf.io/blog/2024/06/04/kubernetes-turns-10-triumphs-trials-and-the-ongoing-battle-for-security/" target="_blank">Kubernetes is turning 10: The triumphs, trials, and the ongoing battle for security</a></center>
   <b><center><a href="https://www.cncf.io/blog/2024/11/06/why-falcos-new-response-engine-is-a-game-changer-for-open-source-cloud-native-security/" target="_blank">Why Falco’s new response engine is a game changer for open source cloud native security</a></center></b>
   <center><a href="https://www.cncf.io/blog/2025/01/22/from-pcap-to-scap-how-falcos-libraries-registries-and-plugins-enable-cloud-native-insights/" target="_blank">From PCAP to SCAP: how Falco’s libraries, registries, and plugins enable cloud native insights</a></center>
-  <center><a href="https://www.suse.com/c/test-and-configure-active-security-for-containers-and-kubernetes-on-rancher-desktop-via-calico-cloud/" target="_blank">Test and Configure Active Security for Containers and Kubernetes on Rancher Desktop via Calico Cloud</a></center>   
+  <center><a href="https://www.suse.com/c/test-and-configure-active-security-for-containers-and-kubernetes-on-rancher-desktop-via-calico-cloud/" target="_blank">Test and Configure Active Security for Containers and Kubernetes on Rancher Desktop via Calico Cloud</a></center>    
 
   <center><h1>Newsjacking</h1></center>
-  <center><a href="https://learnkube.com/issues/86#:~:text=Wireshark%20in%20Kubernetes-,Nigel%20Douglas,-Believe%20it%20or" target="_blank">Optimise Wireshark in Kubernetes</a></center>
-  <b><center><a href="https://thenewstack.io/kubernetes-is-getting-a-better-yaml/" target="_blank">Kubernetes Is Getting a Better YAML</a></center></b> 
+  <center><a href="https://learnkube.com/issues/35" target="_blank">OWASP Kubernetes Top 10</a></center>   
+  <center><a href="https://craigbox.substack.com/p/well-that-escalated-quickly" target="_blank">Well, that escalated quickly</a></center>  
+  <center><a href="https://learnkube.com/issues/86#:~:text=Wireshark%20in%20Kubernetes-,Nigel%20Douglas,-Believe%20it%20or" target="_blank">Optimise Wireshark in Kubernetes</a></center>  
+  <b><center><a href="https://thenewstack.io/kubernetes-is-getting-a-better-yaml/" target="_blank">Kubernetes Is Getting a Better YAML</a></center></b>  
   <center><a href="https://www.cybersecurityintelligence.com/blog/a-guide-to-taming-agentic-ai-risks-8590.html" target="_blank">A guide to taming your agentic AI risks</a></center>
   <center><a href="https://cloudnativenow.com/topics/cloudnativedevelopment/what-to-expect-from-kubernetes-1-31/" target="_blank">What to expect in Kubernetes 1.31 release</a></center>
   <b><center><a href="https://www.forbes.com/sites/kolawolesamueladebayo/2025/08/04/how-vibe-coding-is-creating-a-new-ai-economy" target="_blank">How vibe coding is creating a new AI economy</a></center></b>       
   <center><a href="https://open.spotify.com/episode/3STY2od87hMgyqhmJ23o0S" target="_blank">Security, skills & open-source w/ Nigel Douglas</a></center>
+  <center><a href="https://cloudnativefolks.substack.com/p/january-2024-edition-cloudnativefolks" target="_blank">January 2024 Edition: CloudNativeFolks Community</a></center>   
   <center><a href="https://www.ft.com/content/cc74a851-7ecb-4dec-83e3-4829dd9fdf46" target="_blank">Vibe code letter published to the Financial Times</a></center>
   <b><center><a href="https://www.lemagit.fr/actualites/366623829/Sysdig-confie-Stratoshark-a-la-fondation-Wireshark" target="_blank">Sysdig confie Stratoshark à la fondation Wireshark</a></center> </b>         
   <center><a href="https://cyberinsights.iainfraser.net/index.php/2025/05/14/software-supply-chain-risk/" target="_blank">Software supply chain risks leave UK SMEs vulnerable</a></center>          
@@ -189,7 +221,7 @@ h1::before {
   <center><a href="https://itbrief.news/story/most-organisations-lack-visibility-into-software-supply-chains" target="_blank">Most organisations lacking visibility into the software supply chain</a></center>
   <center><a href="https://channellife.co.uk/story/fewer-than-40-of-firms-have-full-visibility-over-software-supply" target="_blank">Fewer than 40% of firms have full visibility over a software supply chain</a></center>                  
   <b><center><a href="https://www.lemondeinformatique.fr/actualites/lire-avec-stratoshark-sysdig-etend-l-observabilite-reseau-aux-environnements-clouds-95844.html" target="_blank">Avec Stratoshark, Sysdig étend l'observabilité réseau aux environnements clouds</a></center></b>  
-  <center><a href="https://www.sysdig.com/press-releases/sysdig-unveils-stratoshark-extending-wireshark-to-cloud" target="_blank">Stratoshark enables network engineers to bring their security experience to the cloud</a></center> 
+  <center><a href="https://www.sysdig.com/press-releases/sysdig-unveils-stratoshark-extending-wireshark-to-cloud" target="_blank">Stratoshark enables network engineers to bring their security experience to the cloud</a></center>   
 
   <center><h1>Public Speaking</h1></center>
   <center><a href="https://webinars.cloudnativenow.com/cloud-native-data-protection-1" target="_blank">The Cloud Native Data Protection Demo</a></center>
@@ -207,7 +239,6 @@ h1::before {
   <center><a href="https://www.setu.ie/Craft/assets/downloads/Industry_Showcase_Brochure_2024.pdf" target="_blank">Masters of Science (Cybersecurity, Privacy & Trust) - Industry Showcase Brochure for 2024</a></center>
   <center><a href="https://cyberireland.ie/ci-event/cybersecurity-industry-research-workshop-crci2024-carlow/" target="_blank">Cybersecurity Research Workshop @ CRCI 2024: Bridge Academia & Industry for Real-World Impact</a></center>        
 
-
 </div>
 
 
@@ -219,100 +250,101 @@ h1::before {
   </div>
 
   <div class="video-block">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/_dueSBgfySg?si=rLJjUw6l5RoKB7fw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://instruqt.com/customer-stories/sysdig-2" target="_blank">Sysdig trains 80+ Falco workshop attendees with Instruqt at KubeCon</a>
-  </div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/_dueSBgfySg?si=rLJjUw6l5RoKB7fw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <a href="https://instruqt.com/customer-stories/sysdig-2" target="_blank">Sysdig trains 80+ Falco workshop attendees with Instruqt at KubeCon</a></div>
 
   <div class="video-block">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/zdy3uLjeLnk?si=U1DYIsDzvit_tkEb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://platformcon.com/sessions/what-supply-chain-risks-are-hidden-in-your-helm-charts" target="_blank">What supply chain risks are hidden in your Helm charts?</a>
-  </div>
-
-
-    <div class="video-block">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/9Mo_kDe01RY?si=r1osgL0QWPNGbf9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-europe-london-2025/talk/S9WEJM/" target="_blank">API-driven security automation for AKS: Falco Talon meets eBPF-powered Retina</a>
-  </div> 
-
-
-
-
-      <div class="video-block">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/H-7LAo1IalY?si=kqUZlpbxaikIY06J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://www.cncf.io/online-programs/cloud-native-live-managing-threat-intelligence-in-falco/" target="_blank">Cloud Native Live: Managing threat intelligence in Falco</a>
-  </div>
-
-    <div class="video-block">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/1ewRLb4cack?si=mt_SZ-3Yq7uTkGkd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://community.cncf.io/events/details/cncf-cncf-online-programs-presents-cloud-native-live-falcosidekick-the-swiss-army-knife-for-cloud-native-security-amp-observability" target="_blank">Cloud Native Live: Falcosidekick</a>
-  </div>
-
-      <div class="video-block">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/g6oD3jDi8fs?si=uiTrJFzA0oR-a35d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://go.sysdig.com/Cloud-NativeSecurityRedefinedEMEA.html" target="_blank">Cloud Native Live: Introduction to Falco Talon</a>
-  </div>
-
-    <div class="video-block">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/r2D4KkynrHA?si=iXFXad8VuNWGxVeB&amp;start=1364" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://community.cncf.io/events/details/cncf-cncf-online-programs-presents-cncf-on-demand-webinar-project-calico-network-policies/" target="_blank">CNCF Webinar: Project Calico Network Policies</a>
-  </div>
-
-    <div class="video-block">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/i15Owm589bs?si=b4lHHmTPJcwo3Nrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://events.pinetool.ai/3152/#sessions/105132?referrer%5Bpathname%5D=%2Fsessions&referrer%5Bsearch%5D=&referrer%5Btitle%5D=Sessions" target="_blank">Falco Talon Demo at CyberWiseCon</a>
-  </div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/zdy3uLjeLnk?si=U1DYIsDzvit_tkEb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <a href="https://platformcon.com/sessions/what-supply-chain-risks-are-hidden-in-your-helm-charts" target="_blank">What supply chain risks are hidden in your Helm charts?</a></div>
 
   <div class="video-block">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/cVc84Bmz1EA?si=1hdvArpXkj809Hej" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://sharkfest.wireshark.org/retrospective/sfus/presentations24/19.pdf" target="_blank">An API-Driven approach to automating packet captures in Kubernetes</a>
-  </div>   
-
-    <div class="video-block">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/MvglcSagpCc?si=hqvRhL6y_PlJnTv-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://securitysenses.com/videos/detect-and-respond-workload-threats" target="_blank">Sysdig Demo - Securing Cloud, Containers, and Kubernetes</a>
-  </div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/9Mo_kDe01RY?si=r1osgL0QWPNGbf9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <a href="https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-europe-london-2025/talk/S9WEJM/" target="_blank">API-driven security automation for AKS: Falco Talon meets eBPF-powered Retina</a></div> 
 
   <div class="video-block">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/bRNufzgl8iY?si=_PmpIn3xq8vf0SVn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://app.tidalcyber.com/vendors/52f60c20-b265-5a8b-96a3-2bcee76941ac" target="_blank">Updated MITRE ATT&CK coverage chart for Sysdig on Tidal Cyber</a>
-  </div>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/H-7LAo1IalY?si=kqUZlpbxaikIY06J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <a href="https://www.cncf.io/online-programs/cloud-native-live-managing-threat-intelligence-in-falco/" target="_blank">Cloud Native Live: Managing threat intelligence in Falco</a></div>
 
   <div class="video-block">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/moPJlFK_LFc?si=UjAsEnJ2k91BndPO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://www.containerdays.io/containerdays-conference-2023/speakers/" target="_blank">OWASP Kubernetes in-depth</a>
-  </div> 
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/1ewRLb4cack?si=mt_SZ-3Yq7uTkGkd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <a href="https://community.cncf.io/events/details/cncf-cncf-online-programs-presents-cloud-native-live-falcosidekick-the-swiss-army-knife-for-cloud-native-security-amp-observability" target="_blank">Cloud Native Live: Falcosidekick</a></div>
+
+  <div class="video-block">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/g6oD3jDi8fs?si=uiTrJFzA0oR-a35d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <a href="https://go.sysdig.com/Cloud-NativeSecurityRedefinedEMEA.html" target="_blank">Cloud Native Live: Introduction to Falco Talon</a></div>
+
+  <div class="video-block">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/r2D4KkynrHA?si=iXFXad8VuNWGxVeB&amp;start=1364" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <a href="https://community.cncf.io/events/details/cncf-cncf-online-programs-presents-cncf-on-demand-webinar-project-calico-network-policies/" target="_blank">CNCF Webinar: Project Calico Network Policies</a></div>
+
+ <div class="video-block">
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/i15Owm589bs?si=b4lHHmTPJcwo3Nrw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ <a href="https://events.pinetool.ai/3152/#sessions/105132?referrer%5Bpathname%5D=%2Fsessions&referrer%5Bsearch%5D=&referrer%5Btitle%5D=Sessions" target="_blank">Falco Talon Demo at CyberWiseCon</a></div>
+
+  <div class="video-block">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/cVc84Bmz1EA?si=1hdvArpXkj809Hej" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <a href="https://sharkfest.wireshark.org/retrospective/sfus/presentations24/19.pdf" target="_blank">An API-Driven approach to automating packet captures in Kubernetes</a></div>   
+
+  <div class="video-block">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/MvglcSagpCc?si=hqvRhL6y_PlJnTv-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <a href="https://securitysenses.com/videos/detect-and-respond-workload-threats" target="_blank">Sysdig Demo - Securing Cloud, Containers, and Kubernetes</a></div>
+
+  <div class="video-block">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/bRNufzgl8iY?si=_PmpIn3xq8vf0SVn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <a href="https://app.tidalcyber.com/vendors/52f60c20-b265-5a8b-96a3-2bcee76941ac" target="_blank">Updated MITRE ATT&CK coverage chart for Sysdig on Tidal Cyber</a></div>
+
+  <div class="video-block">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/moPJlFK_LFc?si=UjAsEnJ2k91BndPO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <a href="https://www.containerdays.io/containerdays-conference-2023/speakers/" target="_blank">OWASP Kubernetes in-depth</a></div> 
 
   <div class="video-block">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/045GaWyviDA?si=MpYuUsthLDmq4Pk5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://mobile.x.com/aicampai/status/1637832115206213633" target="_blank">Introduction to Kubernetes Cloud Native Runtime Security</a>
-  </div>
+  <a href="https://mobile.x.com/aicampai/status/1637832115206213633" target="_blank">Introduction to Kubernetes Cloud Native Runtime Security</a></div>
 
-    <div class="video-block">
+  <div class="video-block">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/VSaYoAM2z5s?si=bOwwvie3Ayr3yvI2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://www.suse.com/c/test-and-configure-active-security-for-containers-and-kubernetes-on-rancher-desktop-via-calico-cloud/" target="_blank">Kubernetes Security with Rancher RKE2 and Calico Cloud</a>
-  </div>
+  <a href="https://www.suse.com/c/test-and-configure-active-security-for-containers-and-kubernetes-on-rancher-desktop-via-calico-cloud/" target="_blank">Kubernetes Security with Rancher RKE2 and Calico Cloud</a></div>
 
-      <div class="video-block">
+  <div class="video-block">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/_9xw2VcsxiU?si=o-u8LIKqnv-dGsiw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <a href="https://kube.fm/sysdig-announces-falco-feeds" target="_blank">Sysdig announces Falco Feeds for enhanced cloud security and compliance</a>
-  </div>
+  <a href="https://kube.fm/sysdig-announces-falco-feeds" target="_blank">Sysdig announces Falco Feeds for enhanced cloud security and compliance</a></div>
         
 </div>
 
-<script>
-  document.getElementById('linkSearch').addEventListener('keyup', function() {
-    let filter = this.value.toLowerCase();
-    let links = document.querySelectorAll('a');
+<center><a href="https://github.com/ndouglas-cloudsmith/ndouglas-cloudsmith.github.io/deployments/github-pages" target="_blank">Github Pages Deployment Status</a></center>
 
-    links.forEach(link => {
-      let text = link.textContent.toLowerCase();
-      if (text.includes(filter)) {
-        link.parentElement.style.display = ""; // show
-      } else {
-        link.parentElement.style.display = "none"; // hide
-      }
-    });
-  });
+<script>
+(function startRandomFlicker(){
+  const bolds = Array.from(document.getElementsByTagName('b'));
+
+  function flickerElement(el) {
+    el.classList.add('flicker');
+    setTimeout(() => el.classList.remove('flicker'), 100 + Math.random() * 200); // flicker duration
+  }
+
+  function scheduleFlicker(el) {
+    const delay = Math.floor(Math.random() * 1500) + 200; // random interval per element
+    setTimeout(() => {
+      flickerElement(el);
+      scheduleFlicker(el); // reschedule for next flicker
+    }, delay);
+  }
+
+  bolds.forEach(scheduleFlicker);
+})();
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  (function loop(){
+    // random delay between flicks
+    const delay = Math.floor(Math.random() * 450) + 80; // 80-530ms
+    setTimeout(() => {
+      document.body.classList.toggle('dim', Math.random() > 0.5);
+      loop();
+    }, delay);
+  })();
+});
 </script>
 
 </body>
