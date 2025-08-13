@@ -36,6 +36,26 @@ body.dim b {
   body.dim b { transition: none; opacity: 1 !important; }
 }
 
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+body.light-mode h1,
+body.light-mode a {
+  color: black;
+  text-shadow: none;
+}
+
+body.light-mode input,
+body.light-mode button {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  text-shadow: none;
+  box-shadow: none;
+}
+
 
 
 
@@ -112,17 +132,32 @@ h1::before {
 </head>
 <body>
 
-<!-- Search Bar -->
-<center>
+<!-- Search Bar + Dark Mode Toggle as one unit -->
+<center style="display: flex; justify-content: center; align-items: center; gap: 0; margin-bottom:20px;">
+  <button id="darkModeToggle"
+          style="
+            padding: 8px 12px;
+            font-size: 14px;
+            background-color: #000;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            text-shadow: 0 0 5px #00ff00;
+            box-shadow: 0 0 10px #00ff00;
+            font-family: 'Courier New', Consolas, monospace;
+            cursor: pointer;
+            border-right: none; /* merge with search bar */
+          ">
+    ☾
+  </button>
   <input type="text" id="linkSearch" placeholder="Search links..." 
          style="
            width:60%;
            padding:8px;
            font-size:14px;
-           margin-bottom:20px;
            background-color:#000;
            color:#00ff00;
            border:1px solid #00ff00;
+           border-left: none; /* merge with button */
            text-shadow:0 0 5px #00ff00;
            box-shadow:0 0 10px #00ff00;
            font-family:'Courier New', Consolas, monospace;
@@ -162,9 +197,10 @@ h1::before {
   <center><a href="https://www.sans.org/profiles/nigel-douglas" target="_blank">SANS</a></center>
   <center><a href="https://dzone.com/users/4887406/n1g3ld0ugla5.html" target="_blank">DZone</a></center>
   <center><a href="https://fosdem.org/2025/schedule/speaker/nigel_douglas/" target="_blank">FOSDEM</a></center>
-  <center><a href="https://devm.io/experts/nigeldouglas" target="_blank">Devm.io</a></center>    
+  <center><a href="https://devm.io/experts/nigeldouglas" target="_blank">Devm.io</a></center>     
   <center><a href="https://www.raconteur.net/contributors/nigel-douglas" target="_blank">Raconteur</a></center>
   <center><a href="https://www.techstrongevents.com/cloud-native-now-2023/speaker/823969/nigel-douglas" target="_blank">Techstrong</a></center>  
+  <center><a href="https://sessionize.com/nigel-douglas/" target="_blank">Sessionize</a></center>   
   <center><a href="https://www.darkreading.com/author/nigel-douglas" target="_blank">DarkReading</a></center>
   <center><a href="https://cyberwisecon.eu/conference-hosts/#:~:text=Chief%20Executive%20Officer-,Nigel%20Douglas,-Sysdig%2C%20Ireland" target="_blank">CyberWiseCon</a></center>
   <b><center><a href="https://www.devopsdigest.com/cloudsmith-joins-the-vendor-forum" target="_blank">DevOps Digest</a></center> </b>    
@@ -178,16 +214,18 @@ h1::before {
   <center><a href="https://osseu2025.sched.com/speaker/mossydouglas" target="_blank">Open Source Summit EU</a></center>      
 
   <center><h1>Blog Posts</h1></center>
+  <center><a href="https://www.sysdig.com/blog/why-falco-works-the-best-in-distributed-architectures" target="_blank">Intro to Falco Feeds by Sysdig</a></center> 
   <center><a href="https://cloudsecurityalliance.org/blog/2023/08/22/cloud-defense-in-depth-lessons-from-the-kinsing-malware/" target="_blank">Lessons from the Kinsing Malware</a></center>  
   <center><a href="https://www.sysdig.com/blog/terraform-security-best-practices" target="_blank">Terraform Security Best Practices</a></center>     
   <center><a href="https://cloudsecurityalliance.org/blog/2024/05/06/resource-constraints-in-kubernetes-and-security" target="_blank">Resource Constraints in Kubernetes</a></center>
   <center><a href="https://www.sysdig.com/blog/owasp-top-10-for-llms" target="_blank">Harden your LLM security with OWASP</a></center>          
   <center><a href="https://www.cncf.io/blog/2024/11/12/managing-threat-intelligence-in-falco/" target="_blank">Managing threat intelligence in Falco</a></center>
   <b><center><a href="https://platformengineering.org/blog/kubernetes-1-34-10-new-alpha-features" target="_blank">Kubernetes 1.34: 10 new Alpha features</a></center></b>      
-  <center><a href="https://www.sysdig.com/blog/optimizing-wireshark-in-kubernetes" target="_blank">Run Wireshark captures within Kubernetes</a></center>
+  <center><a href="https://www.sysdig.com/blog/optimizing-wireshark-in-kubernetes" target="_blank">Run Wireshark captures within Kubernetes</a></center> 
   <center><a href="https://falco.org/blog/falco-atomic-red/" target="_blank">Install and Test Atomic Red in Kubernetes</a></center>         
   <center><a href="https://www.cncf.io/blog/2024/04/26/the-hidden-economy-of-open-source-software/" target="_blank">The Hidden Economy of Open Source Software</a></center>
-  <center><a href="https://www.cncf.io/blog/2025/05/01/enforcing-artifact-security-with-trivy-and-opa/" target="_blank">Enforce Artifact Security with Trivy and OPA</a></center>   
+  <center><a href="https://www.sysdig.com/blog/a-cisos-grimoire-for-outsmarting-attackers" target="_blank">A CISO’s grimoire for outsmarting attackers</a></center>  
+  <center><a href="https://www.cncf.io/blog/2025/05/01/enforcing-artifact-security-with-trivy-and-opa/" target="_blank">Enforce Artifact Security with Trivy and OPA</a></center>      
   <b><center><a href="https://cloudsecurityalliance.org/blog/2024/01/02/scarleteel-2-0-and-the-mitre-att-ck-framework" target="_blank">Scarleteel 2.0 and the MITRE ATT&CK Framework</a></center></b>         
   <center><a href="https://www.sysdig.com/blog/the-race-for-artificial-intelligence-governance" target="_blank">A Race for Artificial Intelligence Governance</a></center>
   <center><a href="https://www.sysdig.com/blog/why-the-sysdig-windows-agent-matters-in-the-cloud" target="_blank">Why Sysdig's Windows agent matters in the cloud</a></center>   
@@ -199,13 +237,15 @@ h1::before {
   <b><center><a href="https://www.sysdig.com/blog/detect-cve-2025-22224-with-falco" target="_blank">CVE-2025-22224: A critical TOCTOU code execution attack</a></center> </b>
   <center><a href="https://cloudsmith.com/blog/ai-is-now-writing-code-at-scale-but-whos-checking-it" target="_blank">AI is now writing code at scale - but who’s checking it?</a></center>    
   <center><a href="https://www.sysdig.com/blog/detect-cve-2020-8554-using-falco" target="_blank">CVE-2020-8554: Unpatched MITM vulnerability in Kubernetes</a></center>
-  <center><a href="https://cloudsmith.com/blog/data-and-tech-informing-epm" target="_blank">Pulling back the hood on the data & tech that informs EPM</a></center>           
+  <center><a href="https://cloudsmith.com/blog/data-and-tech-informing-epm" target="_blank">Pulling back the hood on the data & tech that informs EPM</a></center>              
   <center><a href="https://cloudsmith.com/blog/owasp-ci-cd-part-9-improper-artifact-integrity-validation" target="_blank">OWASP CI/CD Part 9: Improper Artifact Integrity Validation</a></center>
   <center><a href="https://allthingsopen.org/articles/docker-content-trust-sigstore-vs-notation" target="_blank">Docker is retiring Content Trust and here's what that means</a></center>  
-  <center><a href="https://www.sysdig.com/blog/sysdigs-ai-workload-security-the-risks-of-rapid-ai-adoption" target="_blank">Sysdig's AI Workload Security: The risks of rapid AI adoption</a></center>               
+  <center><a href="https://www.sysdig.com/blog/sysdigs-ai-workload-security-the-risks-of-rapid-ai-adoption" target="_blank">Sysdig's AI Workload Security: The risks of rapid AI adoption</a></center>
+  <center><a href="https://www.sysdig.com/blog/real-time-security" target="_blank">Prevent suspicious cloud behaviours with end-to-end detections</a></center>                 
   <b><center><a href="https://openssf.org/blog/2024/06/21/an-open-source-approach-to-threat-mitigation-in-aws/" target="_blank">OpenSSF: The Open Source Approach to Threat Mitigations in AWS</a></center> </b>   
   <center><a href="https://grcoutlook.com/fibratus-a-compelling-alternative-for-windows-endpoint-security/" target="_blank">Fibratus: A Compelling Alternative for Windows Endpoint Security</a></center> 
-  <center><a href="https://cloudsmith.com/blog/cloudsmith-introduces-epss-scoring-in-enterprise-policy-management-epm" target="_blank">Cloudsmith introduces EPSS Scoring in Enterprise Policy Management</a></center>   
+  <center><a href="https://cloudsmith.com/blog/cloudsmith-introduces-epss-scoring-in-enterprise-policy-management-epm" target="_blank">Cloudsmith introduces EPSS Scoring in Enterprise Policy Management</a></center>
+  <center><a href="https://www.sysdig.com/blog/vulnerability-management-in-the-microservice-era-from-zero-to-hero" target="_blank">Vulnerability management in the microservice era: From zero to hero</a></center>        
   <center><a href="https://www.wireshark.org/blog/2023-09-27-the-evolution-of-system-introspection-from-bpf-to-wireshark-to-falco" target="_blank">The evolution of system introspection from BPF to Wireshark to Falco</a></center>  
   <center><a href="https://cloudsmith.com/blog/cve-2025-3248-serious-vulnerability-found-in-popular-python-ai-package" target="_blank">CVE-2025-3248: Serious vulnerability found in popular Python AI package</a></center>         
   <b><center><a href="https://www.blackhillsinfosec.com/real-time-threat-detection-for-kubernetes-with-atomic-red-tests-and-falco/" target="_blank">Real Time Threat Detection for Kubernetes with Atomic Red Tests and Falco</a></center></b>
@@ -218,15 +258,16 @@ h1::before {
 
   <center><h1>Newsjacking</h1></center>
   <center><a href="https://learnkube.com/issues/35" target="_blank">OWASP Kubernetes Top 10</a></center>   
-  <center><a href="https://craigbox.substack.com/p/well-that-escalated-quickly" target="_blank">Well, that escalated quickly</a></center>  
+  <center><a href="https://craigbox.substack.com/p/well-that-escalated-quickly" target="_blank">Well, that escalated quickly</a></center> 
+  <center><a href="https://open.spotify.com/episode/3STY2od87hMgyqhmJ23o0S" target="_blank">Security, skills & open-source</a></center>   
   <center><a href="https://learnkube.com/issues/86#:~:text=Wireshark%20in%20Kubernetes-,Nigel%20Douglas,-Believe%20it%20or" target="_blank">Optimise Wireshark in Kubernetes</a></center>  
-  <b><center><a href="https://thenewstack.io/kubernetes-is-getting-a-better-yaml/" target="_blank">Kubernetes Is Getting a Better YAML</a></center></b>  
+  <b><center><a href="https://thenewstack.io/kubernetes-is-getting-a-better-yaml/" target="_blank">Kubernetes Is Getting a Better YAML</a></center></b>    
   <center><a href="https://www.cybersecurityintelligence.com/blog/a-guide-to-taming-agentic-ai-risks-8590.html" target="_blank">A guide to taming your agentic AI risks</a></center>
   <center><a href="https://cloudnativenow.com/topics/cloudnativedevelopment/what-to-expect-from-kubernetes-1-31/" target="_blank">What to expect in Kubernetes 1.31 release</a></center>
   <b><center><a href="https://www.forbes.com/sites/kolawolesamueladebayo/2025/08/04/how-vibe-coding-is-creating-a-new-ai-economy" target="_blank">How vibe coding is creating a new AI economy</a></center></b>       
-  <center><a href="https://open.spotify.com/episode/3STY2od87hMgyqhmJ23o0S" target="_blank">Security, skills & open-source w/ Nigel Douglas</a></center>
-  <center><a href="https://cloudnativefolks.substack.com/p/january-2024-edition-cloudnativefolks" target="_blank">January 2024 Edition: CloudNativeFolks Community</a></center>   
-  <center><a href="https://www.ft.com/content/cc74a851-7ecb-4dec-83e3-4829dd9fdf46" target="_blank">Vibe code letter published to the Financial Times</a></center>
+  <center><a href="https://a.tldrnewsletter.com/web-version?ep=1&lc=c38f44d4-ed37-11ef-aa7a-8d1ed4f02174&p=dd15a214-77f6-11f0-b57c-1f104a61afe9&pt=campaign&t=1755083948&s=881e7b8a12a4b981eeb626aee9682d85cb55611d16e773b92322d7ddc337c5bc#:~:text=6%20minute%20read)-,Kubernetes%201.34,-introduces%20several%20alpha" target="_blank">TLDR Newsletter: Kubernetes 1.34 Alpha Features</a></center>  
+  <center><a href="https://cloudnativefolks.substack.com/p/january-2024-edition-cloudnativefolks" target="_blank">January 2024 Edition: CloudNativeFolks Community</a></center>     
+  <center><a href="https://www.ft.com/content/cc74a851-7ecb-4dec-83e3-4829dd9fdf46" target="_blank">Vibe code letter published to the Financial Times</a></center>  
   <b><center><a href="https://www.lemagit.fr/actualites/366623829/Sysdig-confie-Stratoshark-a-la-fondation-Wireshark" target="_blank">Sysdig confie Stratoshark à la fondation Wireshark</a></center> </b>         
   <center><a href="https://cyberinsights.iainfraser.net/index.php/2025/05/14/software-supply-chain-risk/" target="_blank">Software supply chain risks leave UK SMEs vulnerable</a></center>          
   <center><a href="https://hackread.com/fake-npm-website-used-push-malware-via-stolen-token/" target="_blank">Fake NPM website used to push malware via stolen token</a></center>  
@@ -238,7 +279,8 @@ h1::before {
   <center><a href="https://itbrief.news/story/most-organisations-lack-visibility-into-software-supply-chains" target="_blank">Most organisations lacking visibility into the software supply chain</a></center>
   <center><a href="https://channellife.co.uk/story/fewer-than-40-of-firms-have-full-visibility-over-software-supply" target="_blank">Fewer than 40% of firms have full visibility over a software supply chain</a></center>                  
   <b><center><a href="https://www.lemondeinformatique.fr/actualites/lire-avec-stratoshark-sysdig-etend-l-observabilite-reseau-aux-environnements-clouds-95844.html" target="_blank">Avec Stratoshark, Sysdig étend l'observabilité réseau aux environnements clouds</a></center></b>  
-  <center><a href="https://www.sysdig.com/press-releases/sysdig-unveils-stratoshark-extending-wireshark-to-cloud" target="_blank">Stratoshark enables network engineers to bring their security experience to the cloud</a></center>   
+  <center><a href="https://www.sysdig.com/press-releases/sysdig-unveils-stratoshark-extending-wireshark-to-cloud" target="_blank">Stratoshark enables network engineers to bring their security experience to the cloud</a></center> 
+  <center><a href="https://www.cysecurity.news/2025/08/from-vibes-to-ventures-how-ai-first.html" target="_blank">Vibes to Ventures: How AI-First Startups Like Giggles Are Redefining Rules of Entrepreneurship</a></center>     
 
   <center><h1>Public Speaking</h1></center>
   <center><a href="https://webinars.cloudnativenow.com/cloud-native-data-protection-1" target="_blank">The Cloud Native Data Protection Demo</a></center>
@@ -254,7 +296,7 @@ h1::before {
     <center><a href="https://showcase.itcarlow.ie/C00292053.pdf" target="_blank">Mitigating OWASP Top 10 Risks for Kubernetes with a Cloud-Native Response Engine</a></center>  
   <b><center><a href="https://www.meetup.com/corksec/events/303031694/" target="_blank">How can we abuse AI hallucinations to feed the already bloated software supply chain</a></center></b>
   <center><a href="https://www.setu.ie/Craft/assets/downloads/Industry_Showcase_Brochure_2024.pdf" target="_blank">Masters of Science (Cybersecurity, Privacy & Trust) - Industry Showcase Brochure for 2024</a></center>
-  <center><a href="https://cyberireland.ie/ci-event/cybersecurity-industry-research-workshop-crci2024-carlow/" target="_blank">Cybersecurity Research Workshop @ CRCI 2024: Bridge Academia & Industry for Real-World Impact</a></center>        
+  <center><a href="https://cyberireland.ie/ci-event/cybersecurity-industry-research-workshop-crci2024-carlow/" target="_blank">Cybersecurity Research Workshop @ CRCI 2024: Bridge Academia & Industry for Real-World Impact</a></center>          
 
 </div>
 
@@ -328,44 +370,73 @@ h1::before {
 
   <div class="video-block">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/_9xw2VcsxiU?si=o-u8LIKqnv-dGsiw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <a href="https://kube.fm/sysdig-announces-falco-feeds" target="_blank">Sysdig announces Falco Feeds for enhanced cloud security and compliance</a></div>  
+  <a href="https://kube.fm/sysdig-announces-falco-feeds" target="_blank">Sysdig announces Falco Feeds for enhanced cloud security and compliance</a></div>
+
+  <div class="video-block">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/uKVnVK2P1ps?si=JZSlnGYFTD2HUDWR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <a href="https://www.sysdig.com/blog/denial-of-service-kubernetes-calico-falco" target="_blank">How to control access to data on Containers and Kubernetes</a></div>  
         
 </div>
 
 <center><a href="https://github.com/ndouglas-cloudsmith/ndouglas-cloudsmith.github.io/deployments/github-pages" target="_blank">Github Pages Deployment Status</a></center>
 
 <script>
-(function startRandomFlicker(){
-  const bolds = Array.from(document.getElementsByTagName('b'));
+let boldFlickerTimers = [];
+let dimLoopTimer = null;
 
+function startBoldFlicker() {
+  const bolds = Array.from(document.getElementsByTagName('b'));
   function flickerElement(el) {
     el.classList.add('flicker');
-    setTimeout(() => el.classList.remove('flicker'), 100 + Math.random() * 200); // flicker duration
+    setTimeout(() => el.classList.remove('flicker'), 100 + Math.random() * 200);
   }
-
   function scheduleFlicker(el) {
-    const delay = Math.floor(Math.random() * 1500) + 200; // random interval per element
-    setTimeout(() => {
+    const delay = Math.floor(Math.random() * 1500) + 200;
+    const id = setTimeout(() => {
       flickerElement(el);
-      scheduleFlicker(el); // reschedule for next flicker
+      scheduleFlicker(el);
     }, delay);
+    boldFlickerTimers.push(id);
   }
-
   bolds.forEach(scheduleFlicker);
-})();
-</script>
+}
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  (function loop(){
-    // random delay between flicks
-    const delay = Math.floor(Math.random() * 450) + 80; // 80-530ms
-    setTimeout(() => {
-      document.body.classList.toggle('dim', Math.random() > 0.5);
-      loop();
-    }, delay);
-  })();
+function stopBoldFlicker() {
+  boldFlickerTimers.forEach(clearTimeout);
+  boldFlickerTimers = [];
+}
+
+function startDimLoop() {
+  function loop() {
+    document.body.classList.toggle('dim', Math.random() > 0.5);
+    dimLoopTimer = setTimeout(loop, Math.floor(Math.random() * 450) + 80);
+  }
+  loop();
+}
+
+function stopDimLoop() {
+  clearTimeout(dimLoopTimer);
+  document.body.classList.remove('dim');
+}
+
+document.getElementById('darkModeToggle').addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  const darkMode = !document.body.classList.contains('light-mode');
+
+  if (darkMode) {
+    startBoldFlicker();
+    startDimLoop();
+    document.getElementById('darkModeToggle').textContent = '☾';
+  } else {
+    stopBoldFlicker();
+    stopDimLoop();
+    document.getElementById('darkModeToggle').textContent = '☀';
+  }
 });
+
+// Start in dark mode
+startBoldFlicker();
+startDimLoop();
 </script>
 
 <script>
@@ -375,7 +446,7 @@ document.getElementById('linkSearch').addEventListener('input', function () {
 
   links.forEach(link => {
     const text = link.textContent.toLowerCase();
-    const parent = link.closest('center, div, p') || link; // hide the surrounding element if possible
+    const parent = link.closest('center, div, p') || link;
     if (text.includes(query)) {
       parent.style.display = '';
     } else {
@@ -384,6 +455,7 @@ document.getElementById('linkSearch').addEventListener('input', function () {
   });
 });
 </script>
+
 
 </body>
 </html>
