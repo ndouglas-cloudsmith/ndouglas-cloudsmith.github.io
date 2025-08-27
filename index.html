@@ -176,7 +176,7 @@ h1::before {
 </head>
 <body>
 
-<!-- Search Bar + Dark Mode Toggle as one unit -->
+<!-- Search Bar + Dark Mode Toggle + Clear Button -->
 <center style="display: flex; justify-content: center; align-items: center; gap: 0; margin-bottom:20px;">
   <button id="darkModeToggle"
           style="
@@ -193,6 +193,7 @@ h1::before {
           ">
     ☾
   </button>
+
   <input type="text" id="linkSearch" placeholder="Search links..." 
          style="
            width:60%;
@@ -202,11 +203,28 @@ h1::before {
            color:#00ff00;
            border:1px solid #00ff00;
            border-left: none; /* merge with button */
+           border-right: none; /* merge with clear button */
            text-shadow:0 0 5px #00ff00;
            box-shadow:0 0 10px #00ff00;
            font-family:'Courier New', Consolas, monospace;
            outline:none;
          ">
+
+  <button id="clearSearch"
+          style="
+            padding: 8px 12px;
+            font-size: 14px;
+            background-color: #000;
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            text-shadow: 0 0 5px #00ff00;
+            box-shadow: 0 0 10px #00ff00;
+            font-family: 'Courier New', Consolas, monospace;
+            cursor: pointer;
+            border-left: none; /* merge with input */
+          ">
+    ✕
+  </button>
 </center>
 
 
@@ -265,7 +283,8 @@ h1::before {
   <center><a href="https://www.theofficialboard.fr/biographie/nigel-douglas-d1931" target="_blank">The Officials Board</a></center>    
   <center><a href="https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-europe-london-2025/speaker/WDMANM/" target="_blank"  data-tags="cloud-native, kubecon">Cloud Native Rejekts</a></center>
   <center><a href="https://osseu2025.sched.com/speaker/mossydouglas" target="_blank"  data-tags="oss, cloudsmith">Open Source Summit EU</a></center>
-  <center><a href="https://cyberireland.ie/ci-event/corksec-147/" target="_blank"  data-tags="oss, cloudsmith">CyberIreland - Cork|Sec</a></center>       
+  <center><a href="https://community.sysdig.com/u/nigeldouglas/activity" target="_blank"  data-tags="cloud-native, kubernetes">Sysdig's OSS Community</a></center>    
+  <center><a href="https://cyberireland.ie/ci-event/corksec-148/" target="_blank"  data-tags="oss, cloudsmith">CyberIreland - Cork|Sec</a></center>       
 
   <center><h1>Blog Posts</h1></center>
   <center><a href="https://falco.org/blog/falco-talon-v0-1-0/#:~:text=Talon%20with%20him-,Nigel%20Douglas,-who%20tests%20and" target="_blank" data-tags="sysdig, cybersecurity, falco, Kubernetes">
@@ -695,6 +714,15 @@ document.getElementById('linkSearch').addEventListener('input', function () {
       }, 1400);
     }
   });
+});
+</script>
+
+<!-- Removes search message from the search bar -->
+<script>
+document.getElementById('clearSearch').addEventListener('click', () => {
+  const searchInput = document.getElementById('linkSearch');
+  searchInput.value = '';
+  searchInput.dispatchEvent(new Event('input')); // re-trigger filtering logic
 });
 </script>
 
