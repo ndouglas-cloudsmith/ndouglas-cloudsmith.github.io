@@ -11,223 +11,175 @@
       padding: 20px;
     }
 
-h1 {
-  color: #00ff00;
-  text-shadow: 0 0 5px #00ff00;
-  margin-top: 50px; /* <-- Add this line */
-}
+    h1 {
+      color: #00ff00;
+      text-shadow: 0 0 5px #00ff00;
+      margin-top: 50px;
+    }
 
-/* Make search bar more touch-friendly on mobile */
-@media (max-width: 600px) {
-  #linkSearch {
-    width: 80%;
-    padding: 12px; /* taller tap target */
-    font-size: 12px; /* slightly smaller text for mobile */
-  }
+    @media (max-width: 600px) {
+      #linkSearch {
+        width: 80%;
+        padding: 12px;
+        font-size: 12px;
+      }
+      #darkModeToggle {
+        padding: 12px 16px;
+        font-size: 16px;
+      }
+      center[style] {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
 
-  #darkModeToggle {
-    padding: 12px 16px; /* match height with input */
-    font-size: 16px;
-  }
+    .flicker {
+      opacity: 0.1;
+      transition: opacity 0.1s ease-in-out;
+      text-shadow: 0 0 2px #00ff00, 0 0 5px #00ff00;
+    }
+    body.dim b {
+      opacity: 0.25;
+      transition: opacity 0.12s ease-in-out;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      body.dim b { transition: none; opacity: 1 !important; }
+    }
 
-  center[style] {
-    flex-direction: column; /* stack button + input */
-    gap: 10px;
-  }
-}
+    body.light-mode {
+      background-color: white;
+      color: black;
+    }
+    body.light-mode h1,
+    body.light-mode a {
+      color: black;
+      text-shadow: none;
+    }
+    body.light-mode input,
+    body.light-mode button {
+      background-color: white !important;
+      color: black !important;
+      border: 1px solid black !important;
+      text-shadow: none !important;
+      box-shadow: none !important;
+    }
+    body.light-mode .video-block {
+      background-color: white !important;
+      border: 1px solid black !important;
+      box-shadow: none !important;
+    }
 
+    .fade-out {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.1s ease, transform 1.1s ease;
+    }
+    .fade-in {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
 
-/* Flicker style */
-.flicker {
-  opacity: 0.1;
-  transition: opacity 0.1s ease-in-out;
-  text-shadow: 0 0 2px #00ff00, 0 0 5px #00ff00;
-}
-
-/* apply flicker to all <b> at once when body has .dim */
-body.dim b {
-  opacity: 0.25;
-  transition: opacity 0.12s ease-in-out;
-}
-
-/* respect reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  body.dim b { transition: none; opacity: 1 !important; }
-}
-
-body.light-mode {
-  background-color: white;
-  color: black;
-}
-
-body.light-mode h1,
-body.light-mode a {
-  color: black;
-  text-shadow: none;
-}
-
-body.light-mode input,
-body.light-mode button {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-  text-shadow: none;
-  box-shadow: none;
-}
-
-body.light-mode input,
-body.light-mode button {
-  background-color: white !important;
-  color: black !important;
-  border: 1px solid black !important;
-  text-shadow: none !important;
-  box-shadow: none !important;
-}
-
-body.light-mode .video-block {
-  background-color: white !important;
-  border: 1px solid black !important;
-  box-shadow: none !important;
-}
-
-
-.fade-out {
-  opacity: 0;
-  transform: translateY(20px); /* drop effect */
-  transition: opacity 1.1s ease, transform 1.1s ease; /* slower & smooth */
-}
-
-.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-
-.video-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 0 40px;
-  margin-bottom: 40px;
-}
-
-.video-block {
-  text-align: center;
-  border: 1px solid #00ff00;
-  padding: 10px;
-  box-shadow: 0 0 10px #00ff00;
-  background-color: #000; /* Optional: adds contrast inside tiles */
-}
-
-.video-block iframe {
-  width: 100%;
-  height: 200px; /* Adjust based on preference */
-}
-
-.video-block a {
-  display: block;
-  margin-top: 8px;
-  text-decoration: none;
-  color: #00ff00;
-  font-weight: bold;
-  text-shadow: 0 0 3px #00ff00;
-}
-
-.video-block a:hover {
-  color: #33ff33;
-  text-decoration: underline;
-}
-
-a {
-  color: #00ff00;
-  text-decoration: none;
-  text-shadow: 0 0 3px #00ff00;
-  font-size: 13px; /* ↓ Add this line */
-}
-
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 0 40px;
+      margin-bottom: 40px;
+    }
+    .video-block {
+      text-align: center;
+      border: 1px solid #00ff00;
+      padding: 10px;
+      box-shadow: 0 0 10px #00ff00;
+      background-color: #000;
+    }
+    .video-block iframe {
+      width: 100%;
+      height: 200px;
+    }
+    .video-block a {
+      display: block;
+      margin-top: 8px;
+      text-decoration: none;
+      color: #00ff00;
+      font-weight: bold;
+      text-shadow: 0 0 3px #00ff00;
+    }
+    .video-block a:hover {
+      color: #33ff33;
+      text-decoration: underline;
+    }
+    a {
+      color: #00ff00;
+      text-decoration: none;
+      text-shadow: 0 0 3px #00ff00;
+      font-size: 13px;
+    }
     a:hover {
       color: #33ff33;
       text-decoration: underline;
     }
-
     center {
       display: block;
       margin-bottom: 10px;
     }
+    h1::before {
+      content: ">  ";
+      animation: blink 1s steps(2, start) infinite;
+      margin-left: 5px;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      50.01%, 100% { opacity: 0; }
+    }
 
-h1::before {
-  content: ">  ";
-  animation: blink 1s steps(2, start) infinite;
-  margin-left: 5px;
-}
-
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  50.01%, 100% {
-    opacity: 0;
-  }
-}
-
+    /* Resume view styles */
+    #cvContent {
+      display: none;
+      background-color: #0d0d0d;
+      color: #33ff33;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+    }
+    #cvContent h1, #cvContent h2, #cvContent h3 {
+      border-bottom: 1px solid #33ff33;
+      padding-bottom: 0.3rem;
+    }
+    #cvContent a { color: #33ccff; text-decoration: none; }
+    #cvContent a:hover { text-decoration: underline; }
+    #cvContent .section { margin-bottom: 2rem; }
+    #cvContent .contact { margin-bottom: 1rem; }
+    #cvContent .recommendation {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-left: 4px solid #33ff33;
+    }
+    #cvContent ul { margin-top: 0.5rem; }
+    #cvContent li { margin-bottom: 0.3rem; }
   </style>
-
 </head>
 <body>
 
 <!-- Search Bar + Dark Mode Toggle + Clear Button -->
 <center style="display: flex; justify-content: center; align-items: center; gap: 0; margin-bottom:20px;">
   <button id="darkModeToggle"
-          style="
-            padding: 8px 12px;
-            font-size: 14px;
-            background-color: #000;
-            color: #00ff00;
-            border: 1px solid #00ff00;
-            text-shadow: 0 0 5px #00ff00;
-            box-shadow: 0 0 10px #00ff00;
-            font-family: 'Courier New', Consolas, monospace;
-            cursor: pointer;
-            border-right: none; /* merge with search bar */
-          ">
+          style="padding: 8px 12px; font-size: 14px; background-color: #000; color: #00ff00; border: 1px solid #00ff00; text-shadow: 0 0 5px #00ff00; box-shadow: 0 0 10px #00ff00; font-family: 'Courier New', Consolas, monospace; cursor: pointer; border-right: none;">
     ☾
   </button>
 
   <input type="text" id="linkSearch" placeholder="Search links..." 
-         style="
-           width:60%;
-           padding:8px;
-           font-size:14px;
-           background-color:#000;
-           color:#00ff00;
-           border:1px solid #00ff00;
-           border-left: none; /* merge with button */
-           border-right: none; /* merge with clear button */
-           text-shadow:0 0 5px #00ff00;
-           box-shadow:0 0 10px #00ff00;
-           font-family:'Courier New', Consolas, monospace;
-           outline:none;
-         ">
+         style="width:60%; padding:8px; font-size:14px; background-color:#000; color:#00ff00; border:1px solid #00ff00; border-left: none; border-right: none; text-shadow:0 0 5px #00ff00; box-shadow:0 0 10px #00ff00; font-family:'Courier New', Consolas, monospace; outline:none;">
 
   <button id="clearSearch"
-          style="
-            padding: 8px 12px;
-            font-size: 14px;
-            background-color: #000;
-            color: #00ff00;
-            border: 1px solid #00ff00;
-            text-shadow: 0 0 5px #00ff00;
-            box-shadow: 0 0 10px #00ff00;
-            font-family: 'Courier New', Consolas, monospace;
-            cursor: pointer;
-            border-left: none; /* merge with input */
-          ">
+          style="padding: 8px 12px; font-size: 14px; background-color: #000; color: #00ff00; border: 1px solid #00ff00; text-shadow: 0 0 5px #00ff00; box-shadow: 0 0 10px #00ff00; font-family: 'Courier New', Consolas, monospace; cursor: pointer; border-left: none;">
     ✕
   </button>
 </center>
 
-
+<!-- MAIN CONTENT -->
+<div id="mainContent">
 <div>
   <center><h1>Kubernetes Release Notes</h1></center>
   <center><a href="https://www.sysdig.com/blog/whats-new-in-kubernetes-1-30" target="_blank" data-tags="kubernetes, release, sysdig">Kubernetes 1.30 – What’s new?</a></center>
@@ -619,6 +571,124 @@ h1::before {
 
 <center><a href="https://github.com/ndouglas-cloudsmith/ndouglas-cloudsmith.github.io/deployments/github-pages" target="_blank">
 Github Pages Deployment Status</a></center>
+</div>
+
+<!-- CV CONTENT -->
+<div id="cvContent">
+  <h1>Nigel Douglas</h1>
+  <div class="contact">
+    <b>Email:</b> <a href="mailto:mossydouglas@gmail.com">mossydouglas@gmail.com</a></br>
+    <b>Phone:</b> (+353)834743639</br>
+    <b>Location:</b> Crosshaven, Co. Cork, Republic of Ireland
+  </div>
+  <div class="section">
+    <h2>Summary</h2>
+    <p>Head of Developer Relations @ Cloudsmith</p>
+  </div>
+<div class="section">
+    <h2>Summary</h2>
+    <p>Experienced Technical Marketer from Cork, Republic of Ireland, with several years of experience in DevOps and Kubernetes security. Currently leading Developer Relations efforts at Cloudsmith, driving global efforts to secure the software supply chain software through software development best practices, community outreach, and providing policy-as-code automation solutions in Git pipelines, build processes and container orchestration. Active Subject Matter Expert in compiling the Kubernetes release notes in the cloud-native ecosystem, serving as a regular program committee member for the Cloud-Native Computing Foundating (CNCF) since 2019, where I contribute to the assessment of security-specific papers that are submitted to conferences such as KubeCon and the cloud-native security con. Recognised for long-standing contributions to open-source projects, such as Falco, Sysdig Inspect, OPA and Trivy.</p>
+  </div>
+
+  <div class="section">
+    <h2>Employment History</h2>
+
+    <h3>Cloudsmith (March 2025 - Present)</h3>
+    <p><strong>Head of Developer Relations</strong></p>
+    <ul>
+      <li>In the process of writing something interesting.</li>
+    </ul>
+    <p><strong>Achievements:</strong></p>
+    <ul>
+      <li>Won the 2025 “Noob of the Year” awards for exceptional contributions to Cloudsmith in my first year.</li>
+    </ul>
+
+    <h3>Sysdig (July 2022 – March 2025)</h3>
+    <p><strong>Senior Open Source Security Architect</strong></p>
+    <ul>
+      <li>In the process of writing something interesting.</li>
+    </ul>
+
+    <h3>Tigera (March 2021 – July 2022)</h3>
+    <p><strong>Senior Solutions Architect</strong></p>
+    <ul>
+      <li>Assisting potential customers with demos, qualification, architecture, PoCs, and lab trials.</li>
+      <li>Specialised in Kubernetes network security through Network Policies & zero-trust architecture design practices.</li>     
+      <li>Troubleshooted IPTables activity, integrating with Prometheus & Grafana, as well as enforcing Layer 7 policies.</li> 
+      <li>Responding to proposals and RFIs/RFPs for direct customers and channel partners.</li>   
+    </ul>
+    <p><strong>Skills:</strong> Kubernetes, Docker, Linux, Python & Bash, Container Security, Zero-trust architecture design principles</p>
+
+    <h3>Solarwinds (August 2019 – March 2021)</h3>
+    <p><strong>Sales Engineer</strong></p>
+    <ul>
+      <li>Set and managed expectations with senior stakeholders and team members.</li>
+      <li>Improved and developed upon technical marketing documentation for multiple products.</li>
+    </ul>
+    <p><strong>Skills:</strong> Windows Admin, Traditional network kit - routers, switches, firewalls</p>
+
+    <h3>Malwarebytes (January 2018 – July 2019)</h3>
+    <p><strong>Web Application Security Researcher</strong></p>
+    <ul>
+      <li>Established integrations with IT Service Management solutions such as ServiceNow and Splunk.</li>
+      <li>Extensive working experience with ITSM tools and ITIL best-practices.</li>
+      <li>Leadership of EMEA support ops when collaborating with Product Management.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Education</h2>
+    <p><strong>South East Technological University(2023–2024)</strong><br />
+    MSc in Cybersecurity, Privacy and Trust - First Class Honours (1:1)</p>    
+    <p><strong>Technological University of the Shannon (2011–2014)</strong><br />
+    BSc in Creative Multimedia</p>
+  </div>
+
+  <div class="section">
+    <h2>Achievements</h2>
+    <ul>
+      <li><a href="https://www.credly.com/badges/095f7415-7eba-495a-b7ed-06615f55da4d/public_url">Speaker - Open Source Summit Europe 2025</a></li>
+      <li><a href="https://www.credly.com/badges/e2356222-1d23-4cf8-8917-f9bc201e9f8b/public_url">Program Committee Member: KubeCon + CloudNativeCon Europe 2025</a></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Recommendations</h2>
+
+    <div class="recommendation">
+      <p><strong>Juliana Kelly – VP Marketing, Cloudsmith:</strong><br />
+      "Nigel was tasked with setting up new community engagement training material at Cloudsmith, from scratch. These Instruqt training labs served as a solution for internal and external training. Nigel completely over-delivered in this area, and if his work had been done by a team of 5 people, it would still have been impressive."
+      </p>
+    </div>
+
+    <div class="recommendation">
+      <p><strong>Blair Howard – Principal Product Marketing Manager, Sysdig:</strong><br />
+      "Nigel has top-notch skills as both a technical marketer and as a developer advocate. While on the team, he over delivered on his personal assignments, worked to improve our team processes and shared his skills and knowledge with the rest of the marketing organisation to help up-level and upskill them on developments within the cloud-native ecosystem, in open-source Falco, as well as overall security awareness."
+      </p>
+    </div>
+
+    <div class="recommendation">
+      <p><strong>Philippe Bogaerts – Senior Solutions Architect, Tigera:</strong><br /></p>
+      <p>"Working with Nigel has been one of those rare professional experiences where you quickly realize you're collaborating with someone operating at a different level. Nigel brings a calm confidence and quiet intensity to his work that consistently elevates everything and everyone around him.</p>
+      <p>Nigel has a deep intuition for threat research and an uncanny ability to spot patterns and behaviors others might miss. Whether he's investigating large-scale bot campaigns or digging into obscure edge cases, he brings clarity and rigor to every project. He has a sharp eye for technical detail, but also the broader perspective to understand how those details affect real-world security.</p>
+      <p>What I appreciate most about Nigel is that he's not only a strong individual contributor, but also a team-first kind of guy. He takes the time to share what he knows, helps others level up without ego, and genuinely makes the team better by being part of it.</p>
+      <p>If you're looking for someone who will raise the bar in meaningful, lasting ways, Dean is that person."</p>
+    </div>
+
+    <div class="recommendation">
+      <p><strong>Owen Murphy - Principal Product Marketing Manager, Solarwinds</strong><br />
+      "I had the absolute pleasure of working alongside Nigel at Solarwinds, and I can say without hesitation that he’s one of the most technically brilliant and resourceful people I’ve met. He has a rare mix of deep technical expertise, creativity, and fearless problem-solving, the kind of person who will take on any challenge head-on and find an elegant, effective solution.</p>
+      <p>From building smart, automated systems to catch bad actors based on domain reputation to designing mitigation policies by clustering the highest-performing detection rules, Nigel consistently delivered work that made a lasting impact. One of my favourite moments was collaborating with him on the company-wide hackathon, which we won; the idea we developed together went on to become a part of the company’s flagship offerings.</p>
+      <p>Beyond his technical skills, Nigel is a joy to work with - funny, positive, down-to-earth, and the easiest person to collaborate with. His punctuality, work ethic, and ability to bring out the best in his teammates make him a huge asset to any company lucky enough to have him."</p>
+    </div>
+
+    <div class="recommendation">
+      <p><strong>Shane Duggan – Account Executive, Malwarebytes</strong><br /></p>
+      <p>"Nigel consistently exceeded expectations during my time working with him, demonstrating exceptional technical expertise and innovation. He managed client relationships with outstanding professionalism, whether remotely or in person. He took client problems from concept and design through to full production implementation.</p>
+      <p>His combination of technical excellence, client management, and ability to deliver on complex projects makes him an invaluable asset to any organisation.</p>
+    </div>
+  </div>
+</div>
 
 <script>
 let boldFlickerTimers = [];
@@ -640,12 +710,10 @@ function startBoldFlicker() {
   }
   bolds.forEach(scheduleFlicker);
 }
-
 function stopBoldFlicker() {
   boldFlickerTimers.forEach(clearTimeout);
   boldFlickerTimers = [];
 }
-
 function startDimLoop() {
   function loop() {
     document.body.classList.toggle('dim', Math.random() > 0.5);
@@ -653,7 +721,6 @@ function startDimLoop() {
   }
   loop();
 }
-
 function stopDimLoop() {
   clearTimeout(dimLoopTimer);
   document.body.classList.remove('dim');
@@ -662,71 +729,48 @@ function stopDimLoop() {
 document.getElementById('darkModeToggle').addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
   const darkMode = !document.body.classList.contains('light-mode');
-
   if (darkMode) {
-    startBoldFlicker();
-    startDimLoop();
-    document.getElementById('darkModeToggle').textContent = '☾';
+    startBoldFlicker(); startDimLoop(); document.getElementById('darkModeToggle').textContent = '☾';
   } else {
-    stopBoldFlicker();
-    stopDimLoop();
-    document.getElementById('darkModeToggle').textContent = '☀';
+    stopBoldFlicker(); stopDimLoop(); document.getElementById('darkModeToggle').textContent = '☀';
+  }
+});
+startBoldFlicker(); startDimLoop();
+
+// SEARCH HANDLING
+document.getElementById('linkSearch').addEventListener('input', function () {
+  const query = this.value.trim().toLowerCase();
+  const mainContent = document.getElementById('mainContent');
+  const cvContent = document.getElementById('cvContent');
+
+  if (['cv','resume','curriculum vitae'].includes(query)) {
+    mainContent.style.display = 'none';
+    cvContent.style.display = 'block';
+  } else {
+    mainContent.style.display = 'block';
+    cvContent.style.display = 'none';
+
+    // normal filtering
+    const links = document.querySelectorAll('#mainContent a');
+    links.forEach(link => {
+      const text = link.textContent.toLowerCase();
+      const tags = (link.getAttribute('data-tags') || '').toLowerCase();
+      const parent = link.closest('center, div, p') || link;
+
+      if (query === '' || text.includes(query) || tags.includes(query)) {
+        parent.style.display = '';
+      } else {
+        parent.style.display = 'none';
+      }
+    });
   }
 });
 
-// Start in dark mode
-startBoldFlicker();
-startDimLoop();
-</script>
-
-<script>
-document.getElementById('linkSearch').addEventListener('input', function () {
-  const query = this.value.toLowerCase();
-  const links = document.querySelectorAll('a');
-
-  links.forEach(link => {
-    const text = link.textContent.toLowerCase();
-    const tags = (link.getAttribute('data-tags') || '').toLowerCase();
-    const parent = link.closest('center, div, p') || link;
-
-    if (parent.hideTimeout) {
-      clearTimeout(parent.hideTimeout);
-      parent.hideTimeout = null;
-    }
-
-    // Check both link text and tags
-    if (text.includes(query) || tags.includes(query) || query === '') {
-      if (parent.style.display === 'none') {
-        parent.style.display = '';
-        requestAnimationFrame(() => {
-          parent.classList.remove('fade-out');
-          parent.classList.add('fade-in');
-        });
-      } else {
-        parent.classList.remove('fade-out');
-        parent.classList.add('fade-in');
-      }
-    } else {
-      parent.classList.remove('fade-in');
-      parent.classList.add('fade-out');
-      parent.hideTimeout = setTimeout(() => {
-        parent.style.display = 'none';
-      }, 1400);
-    }
-  });
-});
-</script>
-
-<!-- Removes search message from the search bar -->
-<script>
 document.getElementById('clearSearch').addEventListener('click', () => {
   const searchInput = document.getElementById('linkSearch');
   searchInput.value = '';
-  searchInput.dispatchEvent(new Event('input')); // re-trigger filtering logic
+  searchInput.dispatchEvent(new Event('input'));
 });
 </script>
-
-
-
 </body>
 </html>
