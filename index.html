@@ -11,6 +11,31 @@
       padding: 20px;
     }
 
+/* Wrap each certification item inside this container */
+.cert-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically aligns text and image */
+  background-color: #1a1a1a; /* Matching your dark aesthetic */
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid #33ff33;
+}
+
+/* Container for your text layout on the left */
+.cert-text {
+  flex: 1; /* Takes up all available space on left */
+  padding-right: 20px;
+}
+
+/* Styling for the badge/image on the right */
+.cert-badge {
+  width: 80px; /* Adjust size as needed */
+  height: 80px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
     h1 {
       color: #00ff00;
       text-shadow: 0 0 5px #00ff00;
@@ -724,12 +749,15 @@ Github Pages Deployment Status</a></center>
   <div class="section">
     <h2>Certifications</h2>
 
-    <div class="recommendation">
-      <p><strong>PlatformCon 2026 Virtual</strong><br />
-      <p>Platform Engineering</p>
-      <p>Issued June 2026</p>
-      <p>Credential ID: 5107f4ba-5f47-4ea5-a493-91041874a401</p>      
-    </div>
+<div class="cert-block">
+  <div class="cert-text">
+    <h3 style="margin-top: 0; border: none; padding: 0;">PlatformCon 2026 Virtual</h3>
+    <p style="margin: 5px 0;">Platform Engineering</p>
+    <p style="margin: 5px 0; color: #888;">Issued June 2026</p>
+    <small>Credential ID: 5107f4ba-5f47-4ea5-a493-910418744401</small>
+  </div>
+  <img src="https://vbeventstorage.blob.core.windows.net/cert-o0pukifnjliouamo-3yte/openbadges/badges/5107f4ba-5f47-4ea5-a493-91041874a401.png" alt="Badge" class="cert-badge" />
+</div>
 
     <div class="recommendation">
       <p><strong>Platform Engineering Ambassador</strong><br />
