@@ -687,7 +687,7 @@ Github Pages Deployment Status</a></center>
 
 <!-- CV CONTENT -->
 <div id="cvContent">
-<button class="btn" style="width:100%"><i class="fa fa-download"></i> Download Resumé</button>  
+<button class="btn" id="downloadCvBtn" style="width:100%"><i class="fa fa-download"></i> Download Resumé</button> 
   <h1>Nigel Douglas</h1>
   <div class="contact">
     <b>Email:</b> <a href="mailto:mossydouglas@gmail.com">mossydouglas@gmail.com</a></br>
@@ -820,10 +820,12 @@ function startBoldFlicker() {
   }
   bolds.forEach(scheduleFlicker);
 }
+
 function stopBoldFlicker() {
   boldFlickerTimers.forEach(clearTimeout);
   boldFlickerTimers = [];
 }
+
 function startDimLoop() {
   function loop() {
     document.body.classList.toggle('dim', Math.random() > 0.5);
@@ -831,6 +833,7 @@ function startDimLoop() {
   }
   loop();
 }
+
 function stopDimLoop() {
   clearTimeout(dimLoopTimer);
   document.body.classList.remove('dim');
@@ -885,19 +888,46 @@ document.getElementById('clearSearch').addEventListener('click', () => {
 
 // AUTO-FILL FROM URL HASH (#cv)
 function checkUrlHash() {
-  // Get hash value and strip the '#' character
   const hash = window.location.hash.substring(1); 
   if (hash) {
     searchInput.value = decodeURIComponent(hash);
-    // Trigger the input event manually so your search script catches it
     searchInput.dispatchEvent(new Event('input'));
   }
 }
 
 // Run on initial page load
 window.addEventListener('DOMContentLoaded', checkUrlHash);
-// Optional: Run if someone changes the hash without refreshing the page
 window.addEventListener('hashchange', checkUrlHash);
+
+// FORCED FILE DOWNLOAD LOGIC
+document.getElementById('downloadCvBtn').addEventListener('click', function() {
+  const fileUrl = 'https://raw.githubusercontent.com/ndouglas-cloudsmith/docker-testing/refs/heads/main/resum%C3%A9/nigel-douglas-cv.txt';
+  
+  fetch(fileUrl)
+    .then(response => {
+      if (!response.ok) throw new Error('Network response was not ok');
+      return response.blob();
+    })
+    .then(blob => {
+      // Create temporary hidden anchor link
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+      a.download = 'nigel-douglas-cv.txt'; 
+      document.body.appendChild(a);
+      a.click();
+      
+      // Cleanup DOM
+      window.URL.revokeObjectURL(url);
+      document.body.removeChild(a);
+    })
+    .catch(error => {
+      console.error('Download failed:', error);
+      // Failover safely to a new window tab if download engine fails
+      window.open(fileUrl, '_blank');
+    });
+});
 </script>
 </body>
 </html>
