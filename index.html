@@ -835,7 +835,9 @@ document.getElementById('darkModeToggle').addEventListener('click', () => {
 startBoldFlicker(); startDimLoop();
 
 // SEARCH HANDLING
-document.getElementById('linkSearch').addEventListener('input', function () {
+const searchInput = document.getElementById('linkSearch');
+
+searchInput.addEventListener('input', function () {
   const query = this.value.trim().toLowerCase();
   const mainContent = document.getElementById('mainContent');
   const cvContent = document.getElementById('cvContent');
@@ -864,10 +866,25 @@ document.getElementById('linkSearch').addEventListener('input', function () {
 });
 
 document.getElementById('clearSearch').addEventListener('click', () => {
-  const searchInput = document.getElementById('linkSearch');
   searchInput.value = '';
   searchInput.dispatchEvent(new Event('input'));
 });
+
+// AUTO-FILL FROM URL HASH (#cv)
+function checkUrlHash() {
+  // Get hash value and strip the '#' character
+  const hash = window.location.hash.substring(1); 
+  if (hash) {
+    searchInput.value = decodeURIComponent(hash);
+    // Trigger the input event manually so your search script catches it
+    searchInput.dispatchEvent(new Event('input'));
+  }
+}
+
+// Run on initial page load
+window.addEventListener('DOMContentLoaded', checkUrlHash);
+// Optional: Run if someone changes the hash without refreshing the page
+window.addEventListener('hashchange', checkUrlHash);
 </script>
 </body>
 </html>
