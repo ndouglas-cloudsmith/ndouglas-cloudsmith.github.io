@@ -89,7 +89,7 @@
       body.dim b { transition: none; opacity: 1 !important; }
     }
 
-    body.light-mode {
+    body.light-mode  {
       background-color: white;
       color: black;
     }
@@ -111,6 +111,23 @@
       border: 1px solid black !important;
       box-shadow: none !important;
     }
+
+    body.light-mode #cvContent {
+  background-color: white !important;
+  color: black !important;
+}
+
+body.light-mode #cvContent h1,
+body.light-mode #cvContent h2,
+body.light-mode #cvContent h3 {
+  border-bottom: 1px solid black !important;
+}
+
+body.light-mode #cvContent .recommendation,
+body.light-mode #cvContent .cert-block {
+  background-color: #f0f0f0 !important;
+  border-left: 4px solid black !important;
+}
 
     .fade-out {
       opacity: 0;
@@ -180,7 +197,7 @@
     /* Resume view styles */
     #cvContent {
       display: none;
-      background-color: #0d0d0d;
+      background-color: #000000;
       color: #33ff33;
       font-family: 'Courier New', Courier, monospace;
       padding: 2rem;
@@ -233,7 +250,7 @@
   <center><a href="https://cloudsmith.com/blog/kubernetes-1-35-what-you-need-to-know" target="_blank" data-tags="kubernetes, release, cloudsmith">Kubernetes 1.35 – What you need to know</a></center>
   <center><a href="https://cloudsmith.com/blog/kubernetes-1-36-what-you-need-to-know" target="_blank" data-tags="kubernetes, release, cloudsmith">Kubernetes 1.36 – What you need to know</a></center>    
 
-  <center><h1>Miscellaneous</h1></center>
+  <center><h1>Community</h1></center>
   <center><a href="https://www.linkedin.com/posts/zoerab_fosdem-stratoshark-wireshark-activity-7291505953902915584-q0H9/" target="_blank" data-tags="sysdig">Main Stage at FOSDEM</a></center>
   <center><a href="https://www.linkedin.com/feed/update/urn:li:activity:7362038060600938496/" target="_blank" data-tags="cloudsmith">Forbes Vibe Coding post</a>  </center>   
   <b><center><a href="https://www.reddit.com/r/kubernetes/comments/1jv1w5h/kubernetes_133_release/" target="_blank" data-tags="cloudsmith">Kubernetes 1.33 - Reddit</a></center></b>
@@ -282,7 +299,7 @@
   <center><a href="https://community.sysdig.com/u/nigeldouglas/activity" target="_blank"  data-tags="cloud-native, kubernetes">Sysdig's OSS Community</a></center>    
   <center><a href="https://cyberireland.ie/ci-event/corksec-148/" target="_blank"  data-tags="oss, cloudsmith">CyberIreland - Cork|Sec</a></center>       
 
-  <center><h1>Blog Posts</h1></center>
+  <center><h1>Blogs</h1></center>
   <center><a href="https://falco.org/blog/falco-talon-v0-1-0/#:~:text=Talon%20with%20him-,Nigel%20Douglas,-who%20tests%20and" target="_blank" data-tags="sysdig, cybersecurity, falco, Kubernetes">
   Falco Talon v0.1.0 release</a></center>   
   <center><a href="https://dzone.com/articles/owasp-kubernetes-top-10" target="_blank" data-tags="sysdig, cybersecurity">
@@ -504,6 +521,19 @@
   OWASP Kubernetes Top 10 Projects: What Risks You Need to Prioritize in 2023</a></center>       
   <center><a href="https://showcase.itcarlow.ie/C00292053.pdf" target="_blank">
   Mitigate OWASP Top 10 Risks for Kubernetes with a Cloud-Native Response Engine</a></center>
+  
+
+
+  <center><a href="https://tech-for-dev.vercel.app/articles/3859488" target="_blank"  data-tags="techcrunch, miasma, worm">
+  Microsoft's npm Packages Got Backdoored. Again. And AI Agents Pulled the Trigger</a></center>
+  <center><a href="https://techcrunch.com/2026/06/08/microsofts-open-source-tools-were-hacked-to-steal-passwords-of-ai-developers/" target="_blank"  data-tags="techcrunch, miasma, worm">
+  Microsoft’s open source tools were hacked to steal passwords of AI developers</a></center>  
+  <center><a href="https://arstechnica.com/security/2026/06/for-the-2nd-time-in-weeks-microsoft-packages-laced-with-credential-stealer/" target="_blank"  data-tags="techcrunch, arstechnica, miasma, worm">
+  For the 2nd time in weeks, Microsoft packages laced with credential stealer</a></center>
+  <center><a href="https://www.itpro.com/security/malware/miasma-malware-developer-warning-github-compromise" target="_blank"  data-tags="techcrunch, miasma, itpro, worm">
+  Developers urged to remain vigilant amid continued Miasma malware risks</a></center>  
+ 
+
   <center><a href="https://www.sysdig.com/resources/webinars/address-insider-threats-with-sysdigs-cloud-detection-response-cdr" target="_blank">
   Address Insider Threats with Sysdig’s Cloud Detection & Response (CDR)</a></center>
   <center><a href="https://www.sysdig.com/content-library/webinars-od?commid=638887" target="_blank">
@@ -514,19 +544,12 @@
   OWASP Top 10: Control Measures for Kubernetes Security</a></center> 
   <center><a href="https://go.sysdig.com/Streamlining-FalcoMgmt-Falcoctl" target="_blank">
   Streamlining Falco Management:  Introducing Falcoctl</a></center>
-
-  <center><a href="https://tech-for-dev.vercel.app/articles/3859488" target="_blank"  data-tags="techcrunch, miasma, worm">
-  Microsoft's npm Packages Got Backdoored. Again. And AI Agents Pulled the Trigger</a></center>
-  <center><a href="https://techcrunch.com/2026/06/08/microsofts-open-source-tools-were-hacked-to-steal-passwords-of-ai-developers/" target="_blank"  data-tags="techcrunch, miasma, worm">
-  Microsoft’s open source tools were hacked to steal passwords of AI developers</a></center>  
-  <center><a href="https://arstechnica.com/security/2026/06/for-the-2nd-time-in-weeks-microsoft-packages-laced-with-credential-stealer/" target="_blank"  data-tags="techcrunch, arstechnica, miasma, worm">
-  For the 2nd time in weeks, Microsoft packages laced with credential stealer</a></center>
-  <center><a href="https://www.itpro.com/security/malware/miasma-malware-developer-warning-github-compromise" target="_blank"  data-tags="techcrunch, miasma, itpro, worm">
-  Developers urged to remain vigilant amid continued Miasma malware risks</a></center>  
-  <center><a href="https://lilting.ch/en/articles/microsoft-miasma-ai-agent-repo-stealer" target="_blank"  data-tags="techcrunch, miasma, worm">
-  Microsoft 73-repo Miasma: AI agent startup, not npm install</a></center>
   <center><a href="https://wireunwired.com/microsoft-pulls-70-github-repos-after-malware-breach/" target="_blank"  data-tags="techcrunch, miasma, worm">
-  Microsoft pulls 70+ GitHub repos after malware breach</a></center>    
+  Microsoft pulls 70+ GH repos after malware breach</a></center> 
+
+  <center><a href="https://lilting.ch/en/articles/microsoft-miasma-ai-agent-repo-stealer" target="_blank"  data-tags="techcrunch, miasma, worm">
+  Miasma: AI agent startup, not npm install</a></center>
+   
   <center><a href="https://thecyberwire.com/newsletters/daily-briefing/15/109" target="_blank"  data-tags="techcrunch, miasma, worm">
   CyberWire Daily Briefing for 06.09.26</a></center>
   <center><a href="https://cloudsmith.com/blog/cloud-native-digest-may-2026" target="_blank"  data-tags="newsletter, kubernetes, worm">
@@ -772,10 +795,20 @@ Github Pages Deployment Status</a></center>
 
 <div class="cert-block">
   <div class="cert-text">
-    <h3 style="margin-top: 0; border: none; padding: 0;">PlatformCon 2026 Virtual</h3>
+    <h3 style="margin-top: 0; border: none; padding: 0;">PlatformCon 2026 Speaker (London)</h3>
     <p style="margin: 5px 0;">Platform Engineering</p>
     <p style="margin: 5px 0; color: #888;">Issued June 2026</p>
-    <small>Credential ID: https://www.virtualbadge.io/certificate-validator?credential=5107f4ba-5f47-4ea5-a493-91041874a401</small>
+    <small>Credential ID: <a href="https://www.virtualbadge.io/certificate-validator?credential=367e6530-6bfd-45e3-b014-1c552432131f" target="_blank">https://www.virtualbadge.io/certificate-validator?credential=367e6530-6bfd-45e3-b014-1c552432131f</a></small>
+  </div>
+  <img src="https://vbeventstorage.blob.core.windows.net/cert-kgu9ratujvxe01gd-niyz/openbadges/badges/367e6530-6bfd-45e3-b014-1c552432131f.png?484" alt="Badge" class="cert-badge" />
+</div>
+
+<div class="cert-block">
+  <div class="cert-text">
+    <h3 style="margin-top: 0; border: none; padding: 0;">PlatformCon 2026 Virtual Workshops</h3>
+    <p style="margin: 5px 0;">Platform Engineering</p>
+    <p style="margin: 5px 0; color: #888;">Issued June 2026</p>
+    <small>Credential ID: <a href="https://www.virtualbadge.io/certificate-validator?credential=5107f4ba-5f47-4ea5-a493-91041874a401" target="_blank">https://www.virtualbadge.io/certificate-validator?credential=5107f4ba-5f47-4ea5-a493-91041874a401</a></small>
   </div>
   <img src="https://vbeventstorage.blob.core.windows.net/cert-o0pukifnjliouamo-3yte/openbadges/badges/5107f4ba-5f47-4ea5-a493-91041874a401.png" alt="Badge" class="cert-badge" />
 </div>
@@ -785,7 +818,7 @@ Github Pages Deployment Status</a></center>
     <h3 style="margin-top: 0; border: none; padding: 0;">Platform Engineering Ambassador</h3>
     <p style="margin: 5px 0;">Platform Engineering</p>
     <p style="margin: 5px 0; color: #888;">Issued March 2026 | Expires March 2027</p>
-    <small>Credential ID: https://www.virtualbadge.io/certificate-validator?credential=adb338b8-be5d-4095-afa1-ae0f1203be83</small>
+    <small>Credential ID: <a href="https://www.virtualbadge.io/certificate-validator?credential=adb338b8-be5d-4095-afa1-ae0f1203be83" target="_blank">https://www.virtualbadge.io/certificate-validator?credential=adb338b8-be5d-4095-afa1-ae0f1203be83</a></small>
   </div>
   <img src="https://vbeventstorage.blob.core.windows.net/cert-15jiyitgp5ee6dzv-5qrc/openbadges/badges/adb338b8-be5d-4095-afa1-ae0f1203be83.png" alt="Badge" class="cert-badge" />
 </div>
@@ -800,6 +833,35 @@ Github Pages Deployment Status</a></center>
   <img src="https://images.credly.com/size/340x340/images/f09ecd0d-af5b-4933-9919-5db84511eae4/blob" alt="Badge" class="cert-badge" />
 </div>
 
+<div class="cert-block">
+  <div class="cert-text">
+    <h3 style="margin-top: 0; border: none; padding: 0;">Speaker: Open Source Summit Europe 2025</h3>
+    <p style="margin: 5px 0;">The Linux Foundation</p>
+    <p style="margin: 5px 0; color: #888;">Issued September 2025</p>
+    <small>Credential ID: <a href="https://www.credly.com/badges/095f7415-7eba-495a-b7ed-06615f55da4d/public_url" target="_blank">https://www.credly.com/badges/095f7415-7eba-495a-b7ed-06615f55da4d/public_url</a></small>
+  </div>
+  <img src="https://images.credly.com/size/340x340/images/01c72962-d77b-4b19-9533-e5c40ce03ece/blob" alt="Badge" class="cert-badge" />
+</div>
+
+<div class="cert-block">
+  <div class="cert-text">
+    <h3 style="margin-top: 0; border: none; padding: 0;">Program Committee Member: KubeCon + CloudNativeCon India 2025</h3>
+    <p style="margin: 5px 0;">The Linux Foundation</p>
+    <p style="margin: 5px 0; color: #888;">Issued May 2025</p>
+    <small>Credential ID: <a href="https://www.credly.com/badges/35b09775-a005-4207-8b75-db8c574e98fe/public_url" target="_blank">https://www.credly.com/badges/35b09775-a005-4207-8b75-db8c574e98fe/public_url</a></small>
+  </div>
+  <img src="https://images.credly.com/size/340x340/images/22b06bbc-75ce-45b7-b39a-eddf5750847c/blob" alt="Badge" class="cert-badge" />
+</div>
+
+<div class="cert-block">
+  <div class="cert-text">
+    <h3 style="margin-top: 0; border: none; padding: 0;">Program Committee Member: KubeCon + CloudNativeCon China 2025</h3>
+    <p style="margin: 5px 0;">The Linux Foundation</p>
+    <p style="margin: 5px 0; color: #888;">Issued March 2025</p>
+    <small>Credential ID: <a href="https://www.credly.com/badges/f348301e-03b4-45fb-b506-1898480a7b00/public_url" target="_blank">https://www.credly.com/badges/f348301e-03b4-45fb-b506-1898480a7b00/public_url</a></small>
+  </div>
+  <img src="https://images.credly.com/size/340x340/images/43195a73-9ee6-40c7-bd75-eae8515ac836/blob" alt="Badge" class="cert-badge" />
+</div>
 
     
   </div>
