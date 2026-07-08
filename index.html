@@ -218,6 +218,32 @@ body.light-mode #cvContent .cert-block {
     }
     #cvContent ul { margin-top: 0.5rem; }
     #cvContent li { margin-bottom: 0.3rem; }
+
+
+/* 1. Set the initial state for the badges */
+.cert-badge {
+  /* Smooth transition over 1.5s when both hovering AND leaving */
+  transition: transform 1.5s ease-out, box-shadow 1.5s ease-out;
+  
+  /* Keeps the transform smooth and prevents blurry scaling */
+  will-change: transform; 
+  
+  /* Optional: initial subtle shadow so the transition isn't harsh */
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  
+  /* Ensure it plays nice if tucked inside an <a> tag */
+  display: inline-block; 
+}
+
+/* 2. Define what happens on hover */
+.cert-badge:hover {
+  /* Scale up by 15% (Adjust 1.15 to your liking, e.g., 1.1 for 10%) */
+  transform: scale(1.15);
+  
+  /* Add a beautiful, smooth drop shadow */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
   </style>
 </head>
 <body>
@@ -723,11 +749,11 @@ Github Pages Deployment Status</a></center>
     <b>Location:</b> Crosshaven, Co. Cork, Republic of Ireland
   </div>
   <div class="section">
-    <h2>Summary</h2>
+    <h2>Job Title</h2>
     <p>Head of Developer Relations @ Cloudsmith</p>
   </div>
 <div class="section">
-    <h2>Summary</h2>
+    <h2>Short Introduction</h2>
     <p>Experienced Technical Marketer from Cork, Republic of Ireland, with several years of experience in the DevOps, Platform Engineering and <b>Kubernetes</b> security. Currently leading the Developer Relations program at Cloudsmith, heading the global efforts to secure the software supply chain software through open source software development best practices, community outreach, and providing policy-as-code practices to improve existing pipelines. Active Subject Matter Expert (SME) cloud-native security, serving as a regular Program Committee Member for the Cloud-Native Computing Foundating (CNCF) since 2023, where I have contributed to the review process for security-specific papers that are submitted to conferences such as <b>KubeCon</b> and the <b>Cloud-Native Security Con</b>. Recognised in the CNCF, OpenSSF and OWASP communities for contributions to open source projects, such as Falco, Sysdig Inspect, OPA, Wireshark, OSV-Scanner, Calico, and Dependency-Track to name a few.</p>
   </div>
 
@@ -740,8 +766,8 @@ Github Pages Deployment Status</a></center>
       <li>Joining Cloudsmith, I was tasked with building out the Developer Relations program.</li>
       <li>A heavy focus area was improving Cloudsmith's visibility in the OpenSSF & CNCF ecosystems.</li>
       <li>This involved building out PoC Labs, publishing blogs in open-source publications, and public speaking</li>    
-      <li><b>OpenSSF:</b> <small>https://openssf.org/blog/2026/05/20/detecting-malicious-packages-using-the-osv-api</small></li> 
-      <li><b>Open Source Summit:</b> <small>https://www.youtube.com/watch?v=jRgZtniSXFQ</small></li>      
+<li><b>OpenSSF:</b> <small><a href="https://openssf.org/blog/2026/05/20/detecting-malicious-packages-using-the-osv-api" target="_blank">https://openssf.org/blog/2026/05/20/detecting-malicious-packages-using-the-osv-api</a></small></li> 
+<li><b>Open Source Summit:</b> <small><a href="https://www.youtube.com/watch?v=jRgZtniSXFQ" target="_blank">https://www.youtube.com/watch?v=jRgZtniSXFQ</a></small></li>     
     </ul>
 <br/><br/>
     <h3>Sysdig (July 2022 – March 2025)</h3>
@@ -749,7 +775,7 @@ Github Pages Deployment Status</a></center>
     <ul>
       <li>Originally joined to work on detection & response marketing segment of the Sysdig Enterprise platform.</li>
       <li>Transitioned into the open-source software team - working with Sysdig Inspect, <b>Falco</b>, Wireshark and more.</li>
-      <li>Built workshop content around custom Falco rule creation, Days 2 operations, and syscall introspection.</li> 
+      <li>Built workshop content around custom Falco rule creation, Days 2 operations, and kernel-level introspection.</li> 
       <li>Worked closely within the CNCF community - directly helping Falco in its graduation process from CNCF sandbox.</li>       
     </ul>
     <p><strong>Skills:</strong> <b>syscall</b> inspection, <b>eBPF</b> and the Linux kernel, Falco policy curation</p>      
@@ -759,7 +785,7 @@ Github Pages Deployment Status</a></center>
     <ul>
       <li>Assisting prospects with demos, qualification, architecture, PoCs, and lab trials.</li>
       <li>Specialised in Kubernetes network security through Network Policies & zero-trust architecture design practices.</li>     
-      <li>Troubleshooted <b>IPTables</b> & <b>eBPF</b> dataplanes, integrating observability, and L7 policy enforcement.</li> 
+      <li>Troubleshooted <b>IPTables</b> & <b>eBPF</b> dataplanes, integrating observability, and L7 policy enforcement through <b>Envoy</b>.</li> 
       <li>Contributed to Calico open source <b>docs</b>, weekly office hours, CNCF workshops/webinars/community meetups etc.</li>   
     </ul>
     <p><strong>Skills:</strong> Kubernetes, Docker, Linux, Python & Bash, Container Security, Zero-trust network architecture design principles</p>
@@ -769,14 +795,14 @@ Github Pages Deployment Status</a></center>
     <ul>
       <li>Primarily working on the AppOptics Application Performance Monitoring (APM) solution.</li>
       <li>Monitoring various application runtimes, Docker containers and <b>Kubernetes</b> for performance bottlenecks.</li>
-      <li>Demonstrated value of event logging and tracing relevant runtimes via Solarwinds Loggly.</li>      
+      <li>Demonstrated the value of event logging and tracing for the relevant container runtimes via Solarwinds Loggly.</li>      
     </ul>
     <p><strong>Skills:</strong> Linux & container monitoring, virtualisation, traditional networking kits - routers, switches, firewalls</p>
 <br/><br/>
     <h3>Malwarebytes (January 2018 – July 2019)</h3>
     <p><strong>Sales Engineer</strong></p>
     <ul>
-      <li>Demonstrating value of Malwarebytes' heuristic endpoint detection scanner.</li>
+      <li>Demonstrated the value of Malwarebytes' heuristic endpoint detection scanner.</li>
       <li>Handle MD5 hash VirusTotal samples, in some cases testing samples in approved sandbox.</li>
       <li>Lead workshops on evolving threats such as WannaCry ransomware and InfoStealer worms.</li>
     </ul>
@@ -800,7 +826,8 @@ Github Pages Deployment Status</a></center>
     <p style="margin: 5px 0; color: #888;">Issued June 2026</p>
     <small>Credential ID: <a href="https://www.virtualbadge.io/certificate-validator?credential=367e6530-6bfd-45e3-b014-1c552432131f" target="_blank">https://www.virtualbadge.io/certificate-validator?credential=367e6530-6bfd-45e3-b014-1c552432131f</a></small>
   </div>
-  <img src="https://vbeventstorage.blob.core.windows.net/cert-kgu9ratujvxe01gd-niyz/openbadges/badges/367e6530-6bfd-45e3-b014-1c552432131f.png?484" alt="Badge" class="cert-badge" />
+    <a href="https://www.virtualbadge.io/certificate-validator?credential=5107f4ba-5f47-4ea5-a493-91041874a401" target="_blank"> 
+  <img src="https://vbeventstorage.blob.core.windows.net/cert-kgu9ratujvxe01gd-niyz/openbadges/badges/367e6530-6bfd-45e3-b014-1c552432131f.png?484" alt="Badge" class="cert-badge" /></a>
 </div>
 
 <div class="cert-block">
@@ -810,7 +837,8 @@ Github Pages Deployment Status</a></center>
     <p style="margin: 5px 0; color: #888;">Issued June 2026</p>
     <small>Credential ID: <a href="https://www.virtualbadge.io/certificate-validator?credential=5107f4ba-5f47-4ea5-a493-91041874a401" target="_blank">https://www.virtualbadge.io/certificate-validator?credential=5107f4ba-5f47-4ea5-a493-91041874a401</a></small>
   </div>
-  <img src="https://vbeventstorage.blob.core.windows.net/cert-o0pukifnjliouamo-3yte/openbadges/badges/5107f4ba-5f47-4ea5-a493-91041874a401.png" alt="Badge" class="cert-badge" />
+  <a href="https://www.virtualbadge.io/certificate-validator?credential=5107f4ba-5f47-4ea5-a493-91041874a401" target="_blank">  
+  <img src="https://vbeventstorage.blob.core.windows.net/cert-o0pukifnjliouamo-3yte/openbadges/badges/5107f4ba-5f47-4ea5-a493-91041874a401.png" alt="Badge" class="cert-badge" /></a>
 </div>
 
 <div class="cert-block">
@@ -820,7 +848,8 @@ Github Pages Deployment Status</a></center>
     <p style="margin: 5px 0; color: #888;">Issued March 2026 | Expires March 2027</p>
     <small>Credential ID: <a href="https://www.virtualbadge.io/certificate-validator?credential=adb338b8-be5d-4095-afa1-ae0f1203be83" target="_blank">https://www.virtualbadge.io/certificate-validator?credential=adb338b8-be5d-4095-afa1-ae0f1203be83</a></small>
   </div>
-  <img src="https://vbeventstorage.blob.core.windows.net/cert-15jiyitgp5ee6dzv-5qrc/openbadges/badges/adb338b8-be5d-4095-afa1-ae0f1203be83.png" alt="Badge" class="cert-badge" />
+  <a href="https://www.virtualbadge.io/certificate-validator?credential=adb338b8-be5d-4095-afa1-ae0f1203be83" target="_blank">    
+  <img src="https://vbeventstorage.blob.core.windows.net/cert-15jiyitgp5ee6dzv-5qrc/openbadges/badges/adb338b8-be5d-4095-afa1-ae0f1203be83.png" alt="Badge" class="cert-badge" /></a>
 </div>
 
 <div class="cert-block">
@@ -830,7 +859,9 @@ Github Pages Deployment Status</a></center>
     <p style="margin: 5px 0; color: #888;">Issued December 2025</p>
     <small>Credential ID: <a href="https://www.credly.com/badges/72386db5-4ec9-458b-91fa-8ad370c1455b/public_url" target="_blank">https://www.credly.com/badges/72386db5-4ec9-458b-91fa-8ad370c1455b/public_url</a></small>
   </div>
+  <a href="https://www.credly.com/badges/72386db5-4ec9-458b-91fa-8ad370c1455b/public_url" target="_blank">    
   <img src="https://images.credly.com/size/340x340/images/f09ecd0d-af5b-4933-9919-5db84511eae4/blob" alt="Badge" class="cert-badge" />
+</a>  
 </div>
 
 <div class="cert-block">
@@ -840,7 +871,9 @@ Github Pages Deployment Status</a></center>
     <p style="margin: 5px 0; color: #888;">Issued September 2025</p>
     <small>Credential ID: <a href="https://www.credly.com/badges/095f7415-7eba-495a-b7ed-06615f55da4d/public_url" target="_blank">https://www.credly.com/badges/095f7415-7eba-495a-b7ed-06615f55da4d/public_url</a></small>
   </div>
+  <a href="https://www.credly.com/badges/095f7415-7eba-495a-b7ed-06615f55da4d/public_url" target="_blank">  
   <img src="https://images.credly.com/size/340x340/images/01c72962-d77b-4b19-9533-e5c40ce03ece/blob" alt="Badge" class="cert-badge" />
+</a>
 </div>
 
 <div class="cert-block">
@@ -850,7 +883,9 @@ Github Pages Deployment Status</a></center>
     <p style="margin: 5px 0; color: #888;">Issued May 2025</p>
     <small>Credential ID: <a href="https://www.credly.com/badges/35b09775-a005-4207-8b75-db8c574e98fe/public_url" target="_blank">https://www.credly.com/badges/35b09775-a005-4207-8b75-db8c574e98fe/public_url</a></small>
   </div>
+  <a href="https://www.credly.com/badges/35b09775-a005-4207-8b75-db8c574e98fe/public_url" target="_blank">
   <img src="https://images.credly.com/size/340x340/images/22b06bbc-75ce-45b7-b39a-eddf5750847c/blob" alt="Badge" class="cert-badge" />
+  </a>
 </div>
 
 <div class="cert-block">
@@ -860,7 +895,104 @@ Github Pages Deployment Status</a></center>
     <p style="margin: 5px 0; color: #888;">Issued March 2025</p>
     <small>Credential ID: <a href="https://www.credly.com/badges/f348301e-03b4-45fb-b506-1898480a7b00/public_url" target="_blank">https://www.credly.com/badges/f348301e-03b4-45fb-b506-1898480a7b00/public_url</a></small>
   </div>
+  <a href="https://www.credly.com/badges/f348301e-03b4-45fb-b506-1898480a7b00/public_url" target="_blank">
   <img src="https://images.credly.com/size/340x340/images/43195a73-9ee6-40c7-bd75-eae8515ac836/blob" alt="Badge" class="cert-badge" />
+  </a>
+</div>
+
+<div class="cert-block">
+  <div class="cert-text">
+    <h3 style="margin-top: 0; border: none; padding: 0;">Program Committee Member: KubeCon + CloudNativeCon Europe 2025</h3>
+    <p style="margin: 5px 0;">The Linux Foundation</p>
+    <p style="margin: 5px 0; color: #888;">Issued January 2025</p>
+    <small>Credential ID: <a href="https://www.credly.com/badges/92c3c619-d0e6-4d8a-8796-2680f617abc4/public_url" target="_blank">https://www.credly.com/badges/92c3c619-d0e6-4d8a-8796-2680f617abc4/public_url</a></small>
+  </div>
+  <a href="https://www.credly.com/badges/92c3c619-d0e6-4d8a-8796-2680f617abc4/public_url" target="_blank">
+  <img src="https://images.credly.com/size/340x340/images/5be4c74d-322f-476b-9fc9-72fda9c31ff2/blob" alt="Badge" class="cert-badge" />
+  </a>
+</div>
+
+<div class="cert-block">
+  <div class="cert-text">
+    <h3 style="margin-top: 0; border: none; padding: 0;">Program Committee Member: KubeCon + CloudNativeCon India 2024</h3>
+    <p style="margin: 5px 0;">The Linux Foundation</p>
+    <p style="margin: 5px 0; color: #888;">Issued October 2024</p>
+    <small>Credential ID: <a href="https://www.credly.com/badges/28a89999-3320-4914-b098-cc4f7ecbdf02/public_url" target="_blank">https://www.credly.com/badges/28a89999-3320-4914-b098-cc4f7ecbdf02/public_url</a></small>
+  </div>
+  <a href="https://www.credly.com/badges/28a89999-3320-4914-b098-cc4f7ecbdf02/public_url" target="_blank">
+  <img src="https://images.credly.com/size/340x340/images/68359281-14a2-4996-8d88-057bfbf4cf69/blob" alt="Badge" class="cert-badge" />
+  </a>
+</div>
+
+<div class="cert-block">
+  <div class="cert-text">
+    <h3 style="margin-top: 0; border: none; padding: 0;">Program Committee Member</h3>
+    <p style="margin: 5px 0;">eBPF Summit</p>
+    <p style="margin: 5px 0; color: #888;">Issued September 2024</p>
+  </div>
+<a href="https://www.cncf.io/blog/2024/11/06/why-falcos-new-response-engine-is-a-game-changer-for-open-source-cloud-native-security" target="_blank">
+  <img src="https://explore-feed.github.com/topics/ebpf/ebpf.png" alt="Badge" class="cert-badge" /></a>
+
+</div>
+
+<div class="cert-block">
+  <div class="cert-text">
+    <h3 style="margin-top: 0; border: none; padding: 0;">Program Committee Member: KubeCon + CloudNativeCon North America 2024</h3>
+    <p style="margin: 5px 0;">The Linux Foundation</p>
+    <p style="margin: 5px 0; color: #888;">Issued August 2024</p>
+    <small>Credential ID: <a href="https://www.credly.com/badges/a9001368-632b-481f-857d-40e5768bc486/public_url" target="_blank">https://www.credly.com/badges/a9001368-632b-481f-857d-40e5768bc486/public_url</a></small>
+  </div>
+  <a href="https://www.credly.com/badges/a9001368-632b-481f-857d-40e5768bc486/public_url" target="_blank">
+  <img src="https://images.credly.com/size/340x340/images/89b29541-a770-424a-ae98-5aee7eb0cb5c/image.png" alt="Badge" class="cert-badge" />
+  </a>
+</div>
+
+
+<div class="cert-block">
+  <div class="cert-text">
+    <h3 style="margin-top: 0; border: none; padding: 0;">Program Committee Member: KubeCon + CloudNativeCon + Open Source Summit + AI_dev China 2024</h3>
+    <p style="margin: 5px 0;">The Linux Foundation</p>
+    <p style="margin: 5px 0; color: #888;">Issued June 2024</p>
+    <small>Credential ID: <a href="https://www.credly.com/badges/29949c50-62a0-435d-a113-84d7af57cc35" target="_blank">https://www.credly.com/badges/29949c50-62a0-435d-a113-84d7af57cc35</a></small>
+  </div>
+  <a href="https://www.credly.com/badges/29949c50-62a0-435d-a113-84d7af57cc35" target="_blank">
+  <img src="https://images.credly.com/size/340x340/images/5287abd6-55d7-44b2-8daa-aab7b36a096e/image.png" alt="Badge" class="cert-badge" />
+  </a>
+</div>
+
+<div class="cert-block">
+  <div class="cert-text">
+    <h3 style="margin-top: 0; border: none; padding: 0;">Conference Host - CyberWiseCon Europe 2024</h3>
+    <p style="margin: 5px 0;">DevDays Europe Conference</p>
+    <p style="margin: 5px 0; color: #888;">Issued May 2024</p>
+  </div>
+  <a href="https://cyberwisecon.eu/conference-hosts/#:~:text=Chief%20Executive%20Officer-,Nigel%20Douglas,-Sysdig%2C%20Ireland" target="_blank">
+  <img src="https://cyberwisecon.eu/wp-content/uploads/2023/08/CW.png" alt="Badge" class="cert-badge" />
+  </a>
+</div>
+
+<div class="cert-block">
+  <div class="cert-text">
+    <h3 style="margin-top: 0; border: none; padding: 0;">Program Committee Member: CloudNativeSecurityCon North America 2024</h3>
+    <p style="margin: 5px 0;">The Linux Foundation</p>
+    <p style="margin: 5px 0; color: #888;">Issued May 2024</p>
+    <small>Credential ID: <a href="https://www.credly.com/badges/5627a5dd-1543-4c8d-8972-212e1840e399/public_url" target="_blank">https://www.credly.com/badges/5627a5dd-1543-4c8d-8972-212e1840e399/public_url</a></small>
+  </div>
+  <a href="https://www.credly.com/badges/5627a5dd-1543-4c8d-8972-212e1840e399/public_url" target="_blank">
+  <img src="https://images.credly.com/size/340x340/images/dfe19b36-ee15-416a-afb0-cef22b2e7577/image.png" alt="Badge" class="cert-badge" />
+  </a>
+</div>
+
+<div class="cert-block">
+  <div class="cert-text">
+    <h3 style="margin-top: 0; border: none; padding: 0;">Program Committee Member: KubeCon + CloudNativeCon Europe 2023</h3>
+    <p style="margin: 5px 0;">The Linux Foundation</p>
+    <p style="margin: 5px 0; color: #888;">Issued February 2023</p>
+    <small>Credential ID: <a href="https://www.credly.com/badges/c0e13edf-017c-48c6-875b-035d6ce2978c/linked_in_profile" target="_blank">https://www.credly.com/badges/c0e13edf-017c-48c6-875b-035d6ce2978c/linked_in_profile</a></small>
+  </div>
+  <a href="https://www.credly.com/badges/c0e13edf-017c-48c6-875b-035d6ce2978c/linked_in_profile" target="_blank">
+  <img src="https://images.credly.com/size/340x340/images/9eb0c21d-26bf-41ab-9ee5-7ac56aa01edb/image.png" alt="Badge" class="cert-badge" />
+  </a>
 </div>
 
     
