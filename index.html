@@ -89,15 +89,32 @@
       body.dim b { transition: none; opacity: 1 !important; }
     }
 
-    body.light-mode  {
-      background-color: white;
-      color: black;
+/* --- LIGHT MODE BASE STYLES --- */
+    body.light-mode {
+      background-color: white !important;
+      color: black !important;
     }
-    body.light-mode h1,
-    body.light-mode a {
+    body.light-mode h1 {
       color: black;
       text-shadow: none;
     }
+    body.light-mode a {
+      color: #0066cc; 
+      text-shadow: none;
+      background: none !important; /* Forces background to clear default states */
+    }
+    
+    /* --- LIGHT MODE HIGHLIGHTER HOVER EFFECT --- */
+    body.light-mode a:hover {
+      background: linear-gradient(120deg, #ffeb3b 0%, #ffeb3b 100%) !important;
+      background-repeat: no-repeat !important;
+      background-size: 100% 40% !important; 
+      background-position: 0 88% !important; 
+      color: #000000 !important;
+      text-decoration: none !important;
+    }
+    
+    /* --- INTERFACE ELEMENTS --- */
     body.light-mode input,
     body.light-mode button {
       background-color: white !important;
@@ -111,11 +128,38 @@
       border: 1px solid black !important;
       box-shadow: none !important;
     }
+    body.light-mode .video-block a {
+      color: black !important;
+    }
+    body.light-mode .video-block a:hover {
+      color: black !important;
+    }
 
+    /* --- CV SPECIAL CONTENT --- */
     body.light-mode #cvContent {
-  background-color: white !important;
-  color: black !important;
+      background-color: white !important;
+      color: black !important;
+    }
+    body.light-mode #cvContent h1,
+    body.light-mode #cvContent h2,
+    body.light-mode #cvContent h3 {
+      border-bottom: 1px solid black !important;
+    }
+    body.light-mode #cvContent .recommendation,
+    body.light-mode #cvContent .cert-block {
+      background-color: #f0f0f0 !important;
+      border-left: 4px solid black !important;
+    }
+
+body.light-mode a:hover {
+  background: linear-gradient(120deg, #ffeb3b 0%, #ffeb3b 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 40%; /* Adjust 40% to make the highlight thicker or thinner */
+  background-position: 0 88%; /* Positions it perfectly under the text */
+  color: #000000;
+  text-decoration: none;
 }
+
 
 body.light-mode #cvContent h1,
 body.light-mode #cvContent h2,
@@ -280,7 +324,8 @@ body.light-mode #cvContent .cert-block {
   <center><a href="https://www.linkedin.com/posts/zoerab_fosdem-stratoshark-wireshark-activity-7291505953902915584-q0H9/" target="_blank" data-tags="sysdig">Main Stage at FOSDEM</a></center>
   <center><a href="https://www.linkedin.com/feed/update/urn:li:activity:7362038060600938496/" target="_blank" data-tags="cloudsmith">Forbes Vibe Coding post</a>  </center>   
   <b><center><a href="https://www.reddit.com/r/kubernetes/comments/1jv1w5h/kubernetes_133_release/" target="_blank" data-tags="cloudsmith">Kubernetes 1.33 - Reddit</a></center></b>
-  <center><a href="https://www.reddit.com/r/kubernetes/comments/1mc6si3/kubernetes_134_release/" target="_blank" data-tags="cloudsmith">Kubernetes 1.34 - Reddit</a></center>    
+  <center><a href="https://www.reddit.com/r/kubernetes/comments/1mc6si3/kubernetes_134_release/" target="_blank" data-tags="cloudsmith">Kubernetes 1.34 - Reddit</a></center>
+   <center><a href="https://cloudnativenow.com/features/what-to-expect-from-kubernetes-1-36/" target="_blank" data-tags="cloudsmith">Kubernetes 1.36 - CN Now</a></center>     
   <center><a href="https://www.linkedin.com/posts/nigel-douglas-devrel_kubernetes-132-whats-new-activity-7270548006326747137-Aaa9" target="_blank" data-tags="sysdig">Kubernetes 1.32 - LinkedIn</a></center>        
   <center><a href="https://www.linkedin.com/posts/shurupov_kubernetes-133-what-you-need-to-know-activity-7315975648957677570--8ws/" target="_blank" data-tags="cloudsmith">Kubernetes 1.33 - LinkedIn</a></center>     
   <center><a href="https://www.linkedin.com/posts/shurupov_kubernetes-134-what-you-need-to-know-activity-7356200114287210496-loyn" target="_blank" data-tags="cloudsmith">Kubernetes 1.34 - LinkedIn</a></center>
@@ -483,6 +528,11 @@ body.light-mode #cvContent .cert-block {
 
   <center><a href="https://www.linkedin.com/posts/stackpublishing_what-is-npm-doing-to-protect-the-javascript-activity-7472946707287429121-FP6g/" target="_blank" data-tags="cloudsmith, mary, branscombe, thestack, stack">
   What is the npm registry doing to protect JavaScript</a></center> 
+
+  <center><a href="https://www.techtarget.com/searchitoperations/news/366640683/CNCF-Ingress-Nginx-retirement-could-leave-some-users-at-risk" target="_blank" data-tags="beth, pariseau, kubernetes 1.36">
+  Ingress-Nginx retirement could leave some user at risk</a></center>
+  <center><a href="https://lucaberton.com/blog/cloudsmith-nigel-douglas-managing-ai-agents-platform-scale-2026/" target="_blank" data-tags="PlatformCon">
+  Managing AI Agents at Platform Scale: Cloudsmith's Take</a></center>    
   
   <center><a href="https://www.ft.com/content/cc74a851-7ecb-4dec-83e3-4829dd9fdf46" target="_blank">
   Vibe code letter published to the Financial Times</a></center>    
@@ -517,7 +567,9 @@ body.light-mode #cvContent .cert-block {
   <center><a href="https://www.cysecurity.news/2025/08/from-vibes-to-ventures-how-ai-first.html" target="_blank" data-tags="cloudsmith, llm">
   Vibes to Ventures: How AI Startups Like Giggles Are Redefining Rules of Entrepreneurship</a></center>  
   <center><a href="https://www.itpro.com/software/development/uk-government-ai-coding-assistant-trial-developer-time-savings" target="_blank" data-tags="cloudsmith, llm, itpro">
-  The UK government prgrammers trialed AI coding assistants from Microsoft, Github, and Google</a></center>      
+  The UK government prgrammers trialed AI coding assistants from Microsoft, Github, and Google</a></center>
+ <center><a href="https://www.systemshardening.com/articles/kubernetes/llm-kubernetes-threat-model/" target="_blank" data-tags="cloudsmith, llm, itpro">
+  LLMs on Kubernetes: Understanding the Threat Model and Deploying an LLM Gateway (OWASP Top 10)</a></center>        
 
   <center><h1>Public Speaking</h1></center>
   <center><a href="https://www.techstrongevents.com/cloud-native-now-2023" target="_blank">
